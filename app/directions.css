@@ -1,0 +1,104 @@
+/* TRUSTA — design direction explorations (canvas artboards). Wanted tokens. */
+
+.dir { width: 100%; height: 100%; overflow: hidden; position: relative; font-family: var(--w-font-sans); color: var(--ink); background: #fff; letter-spacing: -0.006em; }
+.dir .t-title { font-weight: 800; letter-spacing: -0.03em; color: var(--navy); }
+.dir .mono { font-family: var(--mono); }
+
+.d-badge { display: inline-flex; align-items: center; gap: 5px; height: 21px; padding: 0 9px; border-radius: 999px; font: 600 11.5px/1 var(--w-font-sans); }
+
+/* ══════════ A · HubSpot Stable ══════════════════════════════════════ */
+.dA { display: grid; grid-template-columns: 224px 1fr 280px; }
+.dA-sb { background: #fff; border-right: 1px solid var(--line); display: flex; flex-direction: column; padding: 16px 12px; }
+.dA-brand { display: flex; align-items: center; gap: 9px; padding: 4px 8px 16px; }
+.dA-logo { width: 26px; height: 26px; border-radius: 7px; background: var(--navy); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 14px; }
+.dA-word { font-weight: 800; font-size: 17px; color: var(--navy); letter-spacing: -0.04em; }
+.dA-env { margin-left: auto; font: 600 9px/1 var(--mono); color: var(--amber-strong); background: var(--amber-soft); border: 1px solid var(--amber-line); padding: 4px 6px; border-radius: 5px; }
+.dA-nav { display: flex; flex-direction: column; gap: 2px; margin-top: 6px; }
+.dir .select { white-space: nowrap; }
+.dA-item { display: flex; align-items: center; gap: 11px; padding: 9px 11px; border-radius: 9px; font-size: 13.5px; font-weight: 500; color: var(--ink2); position: relative; white-space: nowrap; }
+.dA-item span { overflow: hidden; text-overflow: ellipsis; }
+.dA-item .ord { margin-left: auto; font: 600 11px/1 var(--mono); color: var(--muted); }
+.dA-item.on { background: var(--blue-soft); color: var(--navy); font-weight: 600; }
+.dA-item.on::before { content: ""; position: absolute; left: -12px; top: 7px; bottom: 7px; width: 3px; border-radius: 0 3px 3px 0; background: var(--blue); }
+.dA-item.on svg { color: var(--blue); } .dA-item svg { color: var(--slate); }
+.dA-main { display: flex; flex-direction: column; min-width: 0; }
+.dA-top { height: 56px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 8px; padding: 0 22px; }
+.dA-step { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 999px; font: 600 12.5px/1 var(--w-font-sans); color: var(--muted); }
+.dA-step .dot { width: 17px; height: 17px; border-radius: 50%; display: grid; place-items: center; font: 700 10px/1 var(--mono); border: 1.5px solid var(--w-neutral-80); color: var(--muted); }
+.dA-step.done { color: var(--ink2); } .dA-step.done .dot { background: var(--green); border-color: var(--green); color: #fff; }
+.dA-step.cur { background: var(--blue); color: #fff; } .dA-step.cur .dot { background: rgba(255,255,255,.25); border: 0; color: #fff; }
+.dA-body { padding: 22px; overflow: hidden; }
+
+/* ══════════ B · Make.com Scenario Canvas ════════════════════════════ */
+.dB { background:
+  radial-gradient(circle, rgba(112,115,124,.16) 1.4px, transparent 1.4px) 0 0 / 22px 22px,
+  linear-gradient(180deg, #f6f8fc, #eef2f8); }
+.dB-rail { position: absolute; left: 0; top: 0; bottom: 0; width: 56px; background: #fff; border-right: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 6px; padding-top: 14px; z-index: 5; }
+.dB-rail .logo { width: 30px; height: 30px; border-radius: 8px; background: var(--navy); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 14px; margin-bottom: 10px; }
+.dB-rt { width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center; color: var(--slate); }
+.dB-rt.on { background: var(--blue-soft); color: var(--blue); }
+.dB-top { position: absolute; left: 56px; right: 0; top: 0; height: 50px; background: rgba(255,255,255,.8); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 12px; padding: 0 18px; z-index: 4; }
+.dB-pill { display: inline-flex; align-items: center; gap: 7px; height: 30px; padding: 0 13px; border-radius: 999px; background: #fff; border: 1px solid var(--line); font: 600 12.5px/1 var(--w-font-sans); color: var(--ink); }
+.dB-run { background: var(--blue); color: #fff; border: 0; }
+.dB-canvas { position: absolute; left: 56px; top: 50px; right: 340px; bottom: 0; }
+.dB-node { position: absolute; width: 96px; text-align: center; }
+.dB-circ { width: 76px; height: 76px; border-radius: 22px; margin: 0 auto; background: #fff; display: grid; place-items: center; box-shadow: 0 6px 18px rgba(16,38,61,.12); border: 2px solid var(--line); position: relative; }
+.dB-circ .ic { color: #fff; }
+.dB-node .nm { font: 700 12px/1.2 var(--w-font-sans); color: var(--navy); margin-top: 9px; }
+.dB-node .ct { font: 600 11px/1 var(--mono); color: var(--muted); margin-top: 3px; }
+.dB-count { position: absolute; top: -7px; right: -7px; min-width: 22px; height: 22px; padding: 0 6px; border-radius: 999px; background: var(--navy); color: #fff; font: 700 11px/22px var(--w-font-sans); border: 2px solid #fff; }
+.dB-circ.done { background: var(--blue); border-color: var(--blue); }
+.dB-circ.active { background: var(--violet); border-color: var(--violet); box-shadow: 0 0 0 5px rgba(101,65,242,.18), 0 6px 18px rgba(16,38,61,.16); }
+.dB-circ.sched { background: var(--amber); border-color: var(--amber); }
+.dB-circ.wait { background: #fff; border-color: var(--w-neutral-70); }
+.dB-circ.wait .ic { color: var(--w-neutral-50); }
+.dB-circ.lock { background: var(--navy); border-color: var(--navy); }
+.dB-panel { position: absolute; right: 0; top: 50px; bottom: 0; width: 340px; background: #fff; border-left: 1px solid var(--line); padding: 18px; overflow: hidden; }
+.dB-tag { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 10px; border-radius: 999px; background: var(--violet-soft); color: var(--violet); font: 700 11px/1 var(--w-font-sans); }
+
+/* ══════════ C · Ops Command Dashboard ═══════════════════════════════ */
+.dC { background: var(--w-neutral-95); display: flex; flex-direction: column; }
+.dC-top { height: 58px; background: #fff; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 22px; padding: 0 24px; }
+.dC-brand { display: flex; align-items: center; gap: 9px; }
+.dC-logo { width: 26px; height: 26px; border-radius: 7px; background: var(--navy); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 14px; }
+.dC-tabs { display: flex; gap: 2px; }
+.dC-tab { padding: 8px 13px; border-radius: 8px; font-size: 13.5px; font-weight: 600; color: var(--ink2); display: inline-flex; gap: 7px; align-items: center; }
+.dC-tab.on { background: var(--navy); color: #fff; }
+.dC-body { padding: 20px 24px; overflow: hidden; flex: 1; }
+.dC-funnel { display: flex; gap: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: #fff; }
+.dC-stage { flex: 1; padding: 14px 16px; border-right: 1px solid var(--line-2); position: relative; }
+.dC-stage:last-child { border-right: 0; }
+.dC-stage .n { font: 800 24px/1 var(--w-font-sans); color: var(--navy); letter-spacing: -0.02em; }
+.dC-stage .l { font-size: 12px; color: var(--ink2); margin-top: 6px; display: flex; align-items: center; gap: 6px; }
+.dC-stage .bar { height: 4px; border-radius: 2px; margin-top: 10px; }
+
+/* ══════════ D · Dark Scenario Rail ══════════════════════════════════ */
+.dD { background: #14151b; color: #e7e8ec; display: grid; grid-template-columns: 64px 1fr 300px; }
+.dD-rail { background: #1a1c22; border-right: 1px solid rgba(255,255,255,.07); display: flex; flex-direction: column; align-items: center; gap: 6px; padding-top: 16px; }
+.dD-rail .logo { width: 34px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, var(--blue), var(--violet)); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 15px; margin-bottom: 12px; }
+.dD-rt { width: 40px; height: 40px; border-radius: 11px; display: grid; place-items: center; color: #8b8e98; position: relative; }
+.dD-rt.on { background: rgba(0,102,255,.16); color: #6699fa; }
+.dD-rt .dotc { position: absolute; top: 6px; right: 6px; width: 7px; height: 7px; border-radius: 50%; background: var(--amber); border: 1.5px solid #1a1c22; }
+.dD-main { min-width: 0; display: flex; flex-direction: column; }
+.dD-top { height: 56px; border-bottom: 1px solid rgba(255,255,255,.07); display: flex; align-items: center; gap: 12px; padding: 0 22px; }
+.dD-body { padding: 22px; overflow: hidden; }
+.dD-card { background: #1d1f26; border: 1px solid rgba(255,255,255,.08); border-radius: 14px; }
+.dD-chip { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 10px; border-radius: 8px; background: rgba(255,255,255,.06); color: #c7c9d1; font: 600 12px/1 var(--w-font-sans); border: 1px solid rgba(255,255,255,.07); }
+.dD-map { background: #16181e; border-left: 1px solid rgba(255,255,255,.07); padding: 18px; }
+.dD-mnode { display: flex; align-items: center; gap: 11px; padding: 11px 12px; border-radius: 11px; background: #1d1f26; border: 1px solid rgba(255,255,255,.08); position: relative; }
+.dD-mnode .mi { width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; flex: none; }
+.dD-mnode .mt { font: 600 12.5px/1.2 var(--w-font-sans); color: #e7e8ec; }
+.dD-mnode .ms { font: 500 10.5px/1.2 var(--mono); color: #8b8e98; margin-top: 3px; }
+.dD-mnode.done .mi { background: var(--blue); color: #fff; }
+.dD-mnode.active { border-color: var(--violet); box-shadow: 0 0 0 3px rgba(101,65,242,.22); }
+.dD-mnode.active .mi { background: var(--violet); color: #fff; }
+.dD-mnode.sched .mi { background: var(--amber); color: #19130a; }
+.dD-mnode.wait { opacity: .62; } .dD-mnode.wait .mi { background: rgba(255,255,255,.08); color: #8b8e98; }
+.dD-conn { height: 14px; width: 2px; background: rgba(255,255,255,.12); margin-left: 27px; }
+.dD-conn.on { background: var(--blue); }
+
+/* connector svg layer */
+.dB-wires { position: absolute; inset: 0; pointer-events: none; }
+
+/* neutralize viewport-based responsive rule from tokens.css inside artboard */
+.dir .rpanel { position: static !important; transform: none !important; }

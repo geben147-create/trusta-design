@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>와디즈형 홈페이지 문구 초안 10종</title>
+<style>
+  :root{
+    --bg:#f4f5f7; --card:#ffffff; --ink:#1a1c20; --sub:#5b616e;
+    --line:#e6e8ec; --point:#3a6ff7; --point2:#0c1b3a;
+    --good:#0a8754; --warn:#d9480f; --warnbg:#fff4ec; --goodbg:#eafaf2;
+    --star:#f5a623; --chip:#eef2ff;
+    --radius:16px; --shadow:0 6px 24px rgba(20,30,60,.07);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:980px;margin:0 auto;padding:28px 18px 80px}
+  header.top{text-align:center;padding:18px 0 8px}
+  header.top h1{font-size:26px;letter-spacing:-.5px}
+  header.top p{color:var(--sub);font-size:14px;margin-top:6px}
+
+  /* 탭 */
+  .tabs{position:sticky;top:0;z-index:30;background:var(--bg);
+    padding:12px 0 10px;margin-top:10px}
+  .tabs-inner{display:flex;gap:7px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+  .tab{flex:0 0 auto;border:1px solid var(--line);background:var(--card);
+    color:var(--sub);padding:9px 14px;border-radius:999px;font-size:13px;
+    cursor:pointer;white-space:nowrap;font-weight:600;transition:.15s}
+  .tab:hover{border-color:var(--point);color:var(--point)}
+  .tab.active{background:var(--point2);color:#fff;border-color:var(--point2)}
+  .tab.guide.active{background:var(--good);border-color:var(--good)}
+
+  .panel{display:none;animation:fade .25s ease}
+  .panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:24px;margin-bottom:18px}
+  .biz-head{display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap}
+  .rank{flex:0 0 auto;width:46px;height:46px;border-radius:12px;background:var(--point2);
+    color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px}
+  .biz-head h2{font-size:21px;letter-spacing:-.4px}
+  .biz-head .one{color:var(--sub);font-size:14px;margin-top:3px}
+  .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .chip{background:var(--chip);color:var(--point);font-size:12px;font-weight:700;
+    padding:5px 11px;border-radius:999px}
+  .chip.gray{background:#f0f1f4;color:var(--sub)}
+  .stars{color:var(--star);letter-spacing:1px;font-size:13px}
+
+  .rev{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+  .rev .box{flex:1;min-width:150px;background:#f8f9fb;border:1px solid var(--line);
+    border-radius:12px;padding:13px 15px}
+  .rev .box .lab{font-size:11px;color:var(--sub);font-weight:700;letter-spacing:.3px}
+  .rev .box .val{font-size:16px;font-weight:800;margin-top:3px}
+  .rev .box.early .val{color:var(--warn)}
+  .rev .box.stable .val{color:var(--good)}
+  .rev .box.ceil .val{color:var(--point)}
+
+  .sec{margin-top:22px}
+  .sec h3{font-size:13px;color:var(--point);font-weight:800;letter-spacing:.5px;
+    text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:7px}
+  .sec h3 .num{background:var(--point);color:#fff;width:20px;height:20px;border-radius:6px;
+    font-size:11px;display:inline-flex;align-items:center;justify-content:center}
+
+  .headlines{display:flex;flex-direction:column;gap:8px}
+  .headlines .h{background:linear-gradient(0deg,#fafbff,#fff);border:1px solid var(--line);
+    border-left:4px solid var(--point);border-radius:10px;padding:12px 14px;font-weight:700;font-size:15.5px}
+  .headlines .h span{display:block;font-size:11px;color:var(--sub);font-weight:600;margin-bottom:3px}
+
+  .block{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}
+  .block .bt{background:#f8f9fb;padding:9px 14px;font-weight:800;font-size:12.5px;
+    color:var(--point2);display:flex;justify-content:space-between;align-items:center}
+  .block .bt em{font-style:normal;color:var(--sub);font-weight:600;font-size:11px}
+  .block .bb{padding:13px 15px;font-size:14.5px}
+  .block .bb ul{margin:6px 0 0 18px}
+  .block .bb li{margin-bottom:4px}
+  .ev-tag{display:inline-block;background:var(--goodbg);color:var(--good);font-size:11px;
+    font-weight:700;padding:3px 9px;border-radius:999px;margin-bottom:8px}
+
+  .faq .q{font-weight:700;font-size:14px;margin-top:8px}
+  .faq .a{color:var(--sub);font-size:13.5px}
+  .price{background:var(--point2);color:#fff;border-radius:12px;padding:16px 18px;font-size:15px}
+  .price b{color:#ffd966}
+  .cta{background:var(--point);color:#fff;text-align:center;border-radius:12px;
+    padding:15px;font-weight:800;font-size:16px;margin-top:10px}
+
+  .warnbox{background:var(--warnbg);border:1px solid #ffd5bd;border-radius:12px;padding:14px 16px;
+    font-size:13.5px;color:#8a3b13;margin-top:14px}
+  .goodbox{background:var(--goodbg);border:1px solid #b8ecd2;border-radius:12px;padding:14px 16px;
+    font-size:13.5px;color:#0a5c3b}
+
+  /* 가이드 탭 */
+  .guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+  .guide-grid .g{background:#f8f9fb;border:1px solid var(--line);border-radius:12px;padding:14px}
+  .guide-grid .g h4{font-size:14px;margin-bottom:6px;color:var(--point2)}
+  .guide-grid .g p{font-size:13px;color:var(--sub)}
+  table.rev-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+  table.rev-table th,table.rev-table td{border:1px solid var(--line);padding:8px 10px;text-align:center}
+  table.rev-table th{background:#f0f1f4;font-size:12px}
+  table.rev-table td.name{text-align:left;font-weight:700}
+  table.rev-table .e{color:var(--warn);font-weight:700}
+  table.rev-table .s{color:var(--good);font-weight:700}
+  .foot{text-align:center;color:var(--sub);font-size:12px;margin-top:30px;line-height:1.8}
+  @media(max-width:640px){.guide-grid{grid-template-columns:1fr}.wrap{padding:18px 12px 70px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>와디즈형 홈페이지 문구 초안 · 10종</h1>
+    <p>저관여 · 비대면 · 정신적 부담 최소 · 고수익(패시브/자동화) 기준 정렬 &nbsp;|&nbsp; 와디즈 8블록 카피 체계 적용</p>
+  </header>
+
+  <nav class="tabs">
+    <div class="tabs-inner" id="tabbar"></div>
+  </nav>
+
+  <div id="panels"></div>
+
+  <p class="foot">
+    ⚠️ 모든 수치는 <b>보수적 추정 초안</b>이며 실제 수익을 보장하지 않습니다.<br>
+    카피의 Evidence(증거) 블록은 <b>실적 0인 신규 사업자 기준</b>으로 작성되었습니다 — 거짓 실적·과장 표현 없음.<br>
+    발행 전 <b>광고법(표시광고법·전자상거래법) 검수</b>를 권장합니다.
+  </p>
+</div>
+
+<script>
+// ===== 가이드(증거 전략 + 수익 현실) =====
+const guide = {
+  evidence: [
+    ["무료 체험 / 베타 제공","초기 사용자에게 무료로 풀고 진짜 후기를 모읍니다. '얼리 유저 후기'는 실적 없이 쓸 수 있는 가장 강력한 증거."],
+    ["환불·만족 보장","'마음에 안 들면 100% 환불'. 실적 대신 '리스크 역전'으로 신뢰를 삽니다."],
+    ["과정·원리 투명 공개","어떻게 만들었는지, 왜 효과 있는지 비하인드를 공개. '결과 자랑' 대신 '신뢰 형성'."],
+    ["공신력 데이터 인용","내 실적이 아닌 공개 통계·논문·기관 자료를 출처와 함께 인용. (예: '○○ 조사에 따르면')"],
+    ["창업자 스토리","'왜 이걸 만들었나' 개인 경험·비포애프터. 단, 반드시 사실만."],
+    ["무료 샘플·미리보기","일부를 공짜로 보여주고 퀄리티로 직접 증명. 말보다 강력."],
+    ["한정성·얼리버드","실적이 없으니 '한정 수량·초기 특가·선착순'으로 행동을 유도."],
+    ["전문성·자격·감수","보유한 자격·경력·전문가 감수만 사실대로. 없으면 쓰지 않음."]
+  ],
+  forbidden: [
+    "'117억 달성' '월 2억' 등 없는 실적 표기 → 표시광고법 거짓·과장광고",
+    "'100% 성공' '무조건 수익' 등 절대적 표현 → 기만적 광고",
+    "가짜 후기·별점 조작 → 전자상거래법 위반",
+    "출처 없는 통계·'전문가들이 인정' 같은 모호한 권위 → 부당 표시"
+  ],
+  revtable: [
+    ["1","디지털 템플릿 스토어","0~50만","100~500만","카탈로그 누적형, CS 거의 없음"],
+    ["2","전자책·PDF 가이드","0~30만","50~300만","단가 낮음, 다작 필요"],
+    ["3","VOD 녹화형 강의","0~100만","200~1,000만+","천장 높음, 1회 제작"],
+    ["4","디지털 에셋(폰트·프리셋 등)","0~30만","50~500만","플랫폼 등록 후 완전 패시브"],
+    ["5","프린트 온디맨드 굿즈","0~30만","50~300만","마진 20~40%, 제작·배송 위탁"],
+    ["6","노코드 마이크로 SaaS·GPTs","0~50만","100~1,000만+","MRR 누적, 천장 매우 높음"],
+    ["7","제휴마케팅 콘텐츠 사이트","0","50~500만","초기 6개월 무수익 흔함"],
+    ["8","유료 뉴스레터·멤버십","0~50만","100~800만","구독자 누적형"],
+    ["9","자동화 워크플로 템플릿","0~50만","100~600만","단가 중간, 보유 자산 연계"],
+    ["10","AI SNS 콘텐츠 자동화 구독","0~100만","300~2,000만+","MRR, 보유 로직으로 진입 유리"]
+  ]
+};
+
+// ===== 10개 사업 카피 데이터 =====
+const businesses = [
+{
+  rank:1, name:"디지털 템플릿 스토어", one:"한 번 만든 템플릿을 24시간 자동 판매하는 무인 상점",
+  target:"매번 0부터 문서 만드느라 야근하는 직장인·프리랜서·소상공인",
+  low:5, rev:4, re:{e:"0~50만",s:"100~500만",c:"1,000만+",u:"건당 1~5만원 · 자동결제/즉시 다운로드"},
+  hl:["매번 처음부터 만드시나요? 그 1년치 노가다, 5분으로 끝냅니다",
+      "잘 만든 템플릿 1개 = 잠자는 동안에도 일하는 직원 1명",
+      "복붙 한 번이면 끝날 일을, 아직도 밤새우고 계신가요?"],
+  hook:"보고서·기획서·가계부·일정표… 빈 화면 앞에서 막막했던 그 시간, 기억나시죠.",
+  agi:"남들 30분이면 끝내는 일을 나만 3시간째. 검색해도 쓸 만한 건 죄다 유료거나 조잡합니다.",
+  sol:"실무에서 바로 쓰는 완성형 템플릿. 빈칸만 채우면 끝나도록 설계했습니다.",
+  feat:["받는 즉시 사용 — 설치·가입 없이 다운로드","평생 무료 업데이트","노션·엑셀·PPT·구글 호환","따라만 하는 영상 사용 가이드 포함"],
+  ev:"런칭 기념 무료 체험판 + 30일 100% 환불 보장. 마음에 안 들면 메일 한 줄로 전액 돌려드립니다. (실적 대신 '무료 샘플 + 환불 보장')",
+  faq:[["상업적으로 써도 되나요?","네, 개인·상업 모두 가능합니다(재판매 제외)."],["환불되나요?","30일 내 무조건 100% 환불."],["업데이트는 유료인가요?","구매하면 이후 업데이트 평생 무료입니다."]],
+  price:"단품 <b>9,900~29,000원</b> · 전체팩 <b>49,000원</b> · 얼리버드 선착순 <b>40% 할인</b>",
+  cta:"지금 무료 샘플 받고, 오늘 야근부터 줄이세요"
+},
+{
+  rank:2, name:"프리미엄 전자책·PDF 가이드", one:"내 시행착오를 압축한 한 권으로 자동 수익",
+  target:"특정 문제를 빠르게 해결하고 싶은데 정보가 흩어져 막막한 사람",
+  low:5, rev:3, re:{e:"0~30만",s:"50~300만",c:"500만+",u:"건당 1~3만원 · 즉시 발송"},
+  hl:["삽질 3개월을, 30페이지로 압축했습니다",
+      "유튜브 100개 봐도 안 풀리던 게, 이 PDF 1개로 정리됩니다",
+      "정보는 넘치는데 '뭘 먼저 해야 할지'는 아무도 안 알려주죠"],
+  hook:"검색하면 정보는 쏟아지는데, 정작 '내 상황에 뭘 어떤 순서로' 해야 할지는 안 나옵니다.",
+  agi:"여기저기 긁어모으다 시간만 날리고, 결국 시작도 못 한 경험. 정보 과잉이 더 사람을 멈추게 합니다.",
+  sol:"바로 따라 할 수 있는 단계별 실행 가이드. 이론 빼고 '오늘 할 일'만 정리했습니다.",
+  feat:["순서대로 따라만 하는 체크리스트형","바로 쓰는 템플릿·예시 첨부","모바일에서도 읽기 편한 편집","구매자 전용 업데이트 노트"],
+  ev:"앞부분 1개 챕터 무료 공개 + 7일 환불 보장. '사보고 별로면 환불' — 내용 일부를 직접 보고 판단하세요.",
+  faq:[["분량이 얼마나 되나요?","핵심만 담아 약 30~60페이지, 1~2시간이면 완독."],["초보도 되나요?","네, 용어부터 풀어 설명합니다."],["환불 가능?","7일 내 100% 환불."]],
+  price:"<b>12,900~24,000원</b> · 2권 묶음 <b>19,000원</b> · 런칭 주간 <b>30% 할인</b>",
+  cta:"무료 챕터 먼저 읽어보세요 — 마음에 들면 그때 결제"
+},
+{
+  rank:3, name:"VOD 녹화형 온라인 강의", one:"한 번 녹화해 평생 파는 자동 수익 강의",
+  target:"독학은 막막하고, 비싼 학원·실시간 강의는 부담스러운 입문자",
+  low:4, rev:5, re:{e:"0~100만",s:"200~1,000만+",c:"수천만",u:"건당 5~30만원 · 자동 수강"},
+  hl:["한 번 듣고 평생 써먹는, '시스템'을 가르칩니다",
+      "학원비 1/10로, 같은 걸 내 시간에 배웁니다",
+      "재능이 없는 게 아니라, 제대로 된 순서를 못 만난 겁니다"],
+  hook:"혼자 유튜브로 배우다 보면, 아는 건 늘어도 '완성'은 못 합니다. 길을 못 찾으니까요.",
+  agi:"학원은 비싸고 시간도 안 맞고, 실시간 강의는 한 번 놓치면 끝. 결국 또 미루게 됩니다.",
+  sol:"처음부터 끝까지 따라 하면 결과물이 나오는 커리큘럼. 내 시간에, 무제한 반복 수강.",
+  feat:["평생 무제한 반복 수강","실습 파일·과제 피드백 가이드","모바일·PC 어디서나","수료증 발급"],
+  ev:"1강 전체 무료 미리보기 + 14일 환불 보장. 강의 퀄리티를 직접 확인하고 결정하세요. (수강 후기는 베타 수강생 모집으로 확보)",
+  faq:[["기간 제한 있나요?","없습니다. 한 번 구매로 평생 수강."],["질문은 어떻게?","강의별 Q&A 게시판으로 비실시간 답변."],["환불?","14일·진도 20% 이내 100% 환불."]],
+  price:"<b>49,000~290,000원</b> · 얼리버드 <b>50% 할인</b> + 보너스 자료 제공",
+  cta:"1강 무료로 보고, 오늘 첫 결과물을 만들어보세요"
+},
+{
+  rank:4, name:"디지털 에셋 판매(폰트·프리셋·LUT·효과음)", one:"플랫폼에 올려두면 알아서 팔리는 창작 자산",
+  target:"퀄리티는 올리고 싶지만 시간·예산은 없는 영상·디자인 크리에이터",
+  low:5, rev:3, re:{e:"0~30만",s:"50~500만",c:"1,000만+",u:"건당 3,000~30,000원 · 누적 판매"},
+  hl:["프로의 색감, 클릭 한 번이면 끝납니다",
+      "편집 3시간을 3초로 — 보정은 이제 자동입니다",
+      "비싼 장비가 아니라, '프리셋' 하나가 차이를 만듭니다"],
+  hook:"같은 사진·영상인데 누군가는 '프로처럼', 나는 '아마추어처럼' 나옵니다. 차이는 후보정이죠.",
+  agi:"매번 색 만지느라 시간 다 쓰고, 그래도 톤이 들쭉날쭉. 그렇다고 전문가 맡기긴 비쌉니다.",
+  sol:"원클릭으로 무드를 입히는 프리셋·에셋 팩. 누가 써도 같은 퀄리티가 나옵니다.",
+  feat:["주요 편집툴 호환(라이트룸·프리미어 등)","상업적 사용 라이선스 포함","무드별 세트 구성","설치 가이드 동봉"],
+  ev:"샘플 비포/애프터 이미지 + 무료 1종 체험팩 제공. 직접 적용해보고 결과로 판단하세요.",
+  faq:[["내 프로그램에서 되나요?","호환 목록을 상세 표기, 미지원 시 환불."],["상업적 사용?","포함된 라이선스로 가능(재배포 제외)."],["환불?","미사용 시 14일 환불."]],
+  price:"세트 <b>9,000~39,000원</b> · 올인원 번들 <b>59,000원</b> · 초기 구매자 <b>35% 할인</b>",
+  cta:"무료 체험팩 받고, 내 작업물에 바로 입혀보세요"
+},
+{
+  rank:5, name:"프린트 온디맨드 굿즈(POD)", one:"재고·배송·CS 없이 디자인만 올리는 무인 굿즈샵",
+  target:"내 취향·메시지를 굿즈로 갖고 싶은 MZ·팬덤·소모임",
+  low:5, rev:3, re:{e:"0~30만",s:"50~300만",c:"500만+",u:"건당 마진 3,000~15,000원"},
+  hl:["재고 0, 배송 0, 당신은 디자인만",
+      "주문이 들어오면 그때 만들어집니다 — 손해 볼 재고가 없죠",
+      "내 감성을 입은 굿즈, 창고 없이 파는 법"],
+  hook:"굿즈 만들고 싶지만 '안 팔리면 재고 떠안는 공포' 때문에 시작을 못 합니다.",
+  agi:"초기 제작비, 보관 창고, 포장·발송, 교환 문의… 혼자 다 감당하다 지쳐 그만두기 일쑤죠.",
+  sol:"주문 시 자동 제작·발송되는 POD 방식. 당신은 디자인 업로드와 홍보만 하면 됩니다.",
+  feat:["주문 즉시 위탁 제작·배송","초기 재고 비용 0원","머그·티셔츠·폰케이스 등 다품목","교환·CS도 위탁 처리"],
+  ev:"실제 샘플 제작 사진 공개 + 첫 구매 만족 보장. 품질은 실물 사진으로 투명 공개합니다.",
+  faq:[["품질이 괜찮나요?","검증된 제작처만 연결, 샘플 사진 공개."],["배송은?","평균 3~7일, 자동 추적 제공."],["불량 시?","무상 재제작 또는 환불."]],
+  price:"제품별 <b>15,000~35,000원</b> · 세트 할인 · 오픈 기념 <b>무료배송</b>",
+  cta:"마음에 드는 디자인, 지금 바로 내 것으로 받아보세요"
+},
+{
+  rank:6, name:"노코드 마이크로 SaaS·GPTs 구독", one:"작은 업무 하나를 자동화해 매달 구독료를 받는 도구",
+  target:"반복 업무에 시간 뺏기는 1인기업·소상공인·실무자",
+  low:4, rev:5, re:{e:"0~50만",s:"100~1,000만+",c:"수천만(MRR)",u:"월 4,900~49,000원 구독"},
+  hl:["직원 1명 값을, 월 구독료 하나로",
+      "당신이 매일 30분씩 하던 일, 이제 버튼 하나로 끝",
+      "복잡한 개발 없이 — '이 업무 하나'만 자동화합니다"],
+  hook:"매일 반복하는 그 단순 작업, 1년이면 며칠을 통째로 거기에 쓰고 있습니다.",
+  agi:"사람 쓰자니 비싸고, 직접 하자니 시간 없고, 개발 외주는 수백만 원. 그래서 그냥 참고 합니다.",
+  sol:"딱 그 업무 하나만 자동화하는 가벼운 도구. 가입하고 바로 쓰는 구독형 서비스입니다.",
+  feat:["설치 없이 웹에서 바로","월 구독·언제든 해지","사용 가이드 + 자동 업데이트","업무 1건 특화로 학습 부담 없음"],
+  ev:"7일 무료 체험(카드 등록 없이) + 만족 못 하면 즉시 해지. 실제 절약 시간을 직접 체감하세요.",
+  faq:[["코딩 몰라도 되나요?","네, 클릭만으로 사용합니다."],["해지 어렵나요?","버튼 한 번, 위약금 없음."],["내 데이터 안전?","암호화 저장, 외부 공유 안 함."]],
+  price:"<b>월 4,900~49,000원</b> · 연결제 <b>2개월 무료</b> · 베타 유저 <b>평생 50% 고정</b>",
+  cta:"카드 없이 7일 무료체험 — 절약되는 시간을 직접 확인하세요"
+},
+{
+  rank:7, name:"제휴마케팅 콘텐츠 사이트", one:"한 번 쓴 글이 검색을 타고 잠든 사이 수익을 만드는 자산",
+  target:"무언가를 비교·검색해 결정하려는 정보 탐색자",
+  low:5, rev:3, re:{e:"0 (초기 무수익)",s:"50~500만",c:"1,000만+",u:"광고+제휴 수수료 누적"},
+  hl:["잠자는 동안에도 들어오는 수익의 구조",
+      "한 번 잘 쓴 글 1개가, 1년 내내 일합니다",
+      "'뭐가 더 좋아?'를 검색하는 사람에게, 답을 주고 수익을 얻습니다"],
+  hook:"무언가 살 때 우리는 항상 검색하고 비교합니다. 그 '결정의 순간'에 답을 주는 자리가 돈이 됩니다.",
+  agi:"매달 콘텐츠를 쥐어짜야 하는 SNS와 달리, 검색 콘텐츠는 안 쌓이면 평생 0입니다 — 초기엔 정말 느립니다.",
+  sol:"검색 수요가 명확한 주제로 비교·후기 콘텐츠를 쌓아, 광고·제휴 수익을 누적합니다.",
+  feat:["한 번 작성 → 장기간 유입","광고+제휴 다중 수익원","주제 자산화로 매각도 가능","비대면 100%"],
+  ev:"솔직한 비교·장단점 명시로 신뢰 구축. (제휴 링크 포함 사실을 반드시 고지 — 표시광고법 준수)",
+  faq:[["수익까지 얼마나?","보통 6~12개월, 누적형이라 인내 필요."],["전문지식 필요?","주제를 깊이 파면 됩니다, 자격 불필요."],["광고 고지?","제휴 링크는 반드시 명시합니다."]],
+  price:"방문자에게 무료 · 수익은 광고/제휴에서 발생(구독 모델 결합 가능)",
+  cta:"가장 궁금한 비교부터 확인하고, 후회 없는 선택을 하세요"
+},
+{
+  rank:8, name:"유료 뉴스레터·멤버십 자료실", one:"특정 분야 정보를 모아 매달 구독료를 받는 지식 채널",
+  target:"한 분야를 깊이 파고들고 싶은데 정보가 흩어져 답답한 사람",
+  low:4, rev:4, re:{e:"0~50만",s:"100~800만",c:"수천만",u:"월 3,900~29,000원 구독"},
+  hl:["이 분야 상위 1%만 챙겨 보는 정보",
+      "흩어진 정보를 매주 한 통으로 — 검색은 그만",
+      "남들이 '검색'할 때, 당신은 '먼저' 압니다"],
+  hook:"분야는 빠르게 변하는데, 매번 직접 검색·정리하는 데만 한 주가 다 갑니다.",
+  agi:"중요한 정보는 늘 한발 늦게 알게 되고, 정작 핵심은 흩어져 어디 있는지도 모릅니다.",
+  sol:"엄선·정리된 정보를 정기적으로 받아보는 구독 채널. 자료는 멤버 전용 아카이브에 누적됩니다.",
+  feat:["정기 발행(주간/격주)","멤버 전용 자료 아카이브","핵심 요약 + 출처 제공","언제든 구독 해지"],
+  ev:"최근 발행분 1회 무료 공개 + 첫 달 환불 보장. 퀄리티를 먼저 받아보고 결정하세요.",
+  faq:[["발행 주기는?","주 1회 기준, 일정 사전 공지."],["지난 호도 보나요?","멤버는 아카이브 전체 열람."],["해지?","언제든 1클릭, 남은 기간 이용."]],
+  price:"<b>월 3,900~29,000원</b> · 연 구독 <b>2개월 무료</b> · 창간 멤버 <b>특별가 고정</b>",
+  cta:"최신 호 무료로 받아보고, 1%의 정보 흐름에 올라타세요"
+},
+{
+  rank:9, name:"자동화 워크플로 템플릿 판매(n8n·Make)", one:"복붙 한 번으로 끝나는 자동화 설계도를 파는 사업",
+  target:"자동화를 도입하고 싶지만 어디서 시작할지 막막한 1인기업·실무자",
+  low:5, rev:4, re:{e:"0~50만",s:"100~600만",c:"1,000만+",u:"건당 3~20만원 · 누적 판매"},
+  hl:["복붙 한 번으로 자동화가 완성됩니다",
+      "0부터 짜지 마세요 — 검증된 설계도를 가져다 쓰세요",
+      "'자동화 하고 싶다'와 '자동화 됐다' 사이의 거리를 없앱니다"],
+  hook:"자동화가 답인 건 알지만, 막상 빈 화면을 켜면 노드 하나부터 막막합니다.",
+  agi:"튜토리얼 따라 해도 내 상황엔 안 맞고, 에러 잡다 며칠. 결국 '나중에'로 미룹니다.",
+  sol:"바로 불러와 값만 바꾸면 작동하는 검증된 워크플로 템플릿. 설계는 끝나 있고, 연결만 하면 됩니다.",
+  feat:["임포트 즉시 작동하는 JSON","단계별 설정 가이드 영상","대표 업무별 템플릿 구성","업데이트·신규 추가 제공"],
+  ev:"템플릿 1종 무료 배포 + 작동 데모 영상 공개. 실제로 돌아가는 걸 보고 구매하세요.",
+  faq:[["바로 되나요?","API 키 등 값만 채우면 작동, 가이드 동봉."],["수정 가능?","자유롭게 커스터마이즈 가능."],["환불?","미사용·미작동 시 환불."]],
+  price:"단품 <b>30,000~200,000원</b> · 번들 <b>290,000원</b> · 초기 <b>40% 할인</b>",
+  cta:"무료 템플릿부터 돌려보고, 자동화의 효과를 직접 느껴보세요"
+},
+{
+  rank:10, name:"AI SNS 콘텐츠 자동화 구독", one:"하루 1주제만 넣으면 전 채널 콘텐츠가 자동 생성되는 구독 서비스",
+  target:"콘텐츠 발행에 지친 SNS 마케터·자영업자·1인 브랜드",
+  low:4, rev:5, re:{e:"0~100만",s:"300~2,000만+",c:"수천만(MRR)",u:"월 19,000~99,000원 구독"},
+  hl:["하루 1주제만 넣으면, 전 채널이 알아서 채워집니다",
+      "콘텐츠 공장을 직원 없이 돌리는 법",
+      "매일 '뭐 올리지' 고민하던 그 시간을, 통째로 돌려드립니다"],
+  hook:"SNS는 해야 하는데, 매일 소재 찾고 글 쓰고 편집하다 보면 정작 본업 할 시간이 없습니다.",
+  agi:"채널은 늘어나는데 몸은 하나. 며칠 쉬면 도달은 뚝, 다시 올리려니 막막 — 악순환이죠.",
+  sol:"주제 1개만 입력하면 채널별 맞춤 콘텐츠가 자동 생성·정리되는 구독형 엔진. (보유 SNS 자동화 로직 기반)",
+  feat:["1주제 → 멀티채널 콘텐츠 자동 변환","말투·브랜드 톤 학습","발행 대기 큐로 검수 후 발행","구독형·언제든 해지"],
+  ev:"7일 무료 체험으로 실제 산출물 확인 + 만족 못 하면 해지. (광고법 자동 검수 게이트 내장으로 위험 문구 사전 필터)",
+  faq:[["완전 자동인가요?","생성은 자동, 발행 전 검수는 직접(반자동) 선택 가능."],["내 톤 반영?","말투 프리셋·예시로 학습합니다."],["해지?","1클릭, 위약금 없음."]],
+  price:"<b>월 19,000~99,000원</b> · 연결제 <b>2개월 무료</b> · 베타 <b>평생 특가</b>",
+  cta:"7일 무료로, '콘텐츠 고민 없는 하루'를 먼저 경험하세요"
+}
+];
+
+// ===== 렌더링 =====
+const tabbar = document.getElementById('tabbar');
+const panels = document.getElementById('panels');
+function stars(n){return '★★★★★☆☆☆☆☆'.slice(5-n,10-n);}
+const BLK=[["Hook","주목·문제 환기"],["Agitation","고통 증폭"],["Solution","해결책 제시"],
+  ["Feature","핵심 기능·혜택"],["Evidence","신뢰·증거(초기형)"],["FAQ","반론 차단"],["Price","가격 제안"],["CTA","행동 유도"]];
+
+// 가이드 탭
+const gTab=document.createElement('button');
+gTab.className='tab guide active';gTab.textContent='📘 시작 가이드';
+gTab.onclick=()=>activate('guide');
+tabbar.appendChild(gTab);
+
+const gPanel=document.createElement('div');
+gPanel.className='panel active';gPanel.id='panel-guide';
+let revRows=guide.revtable.map(r=>`<tr><td>${r[0]}</td><td class="name">${r[1]}</td><td class="e">${r[2]}</td><td class="s">${r[3]}</td><td style="text-align:left;color:#5b616e">${r[4]}</td></tr>`).join('');
+let evCards=guide.evidence.map((e,i)=>`<div class="g"><h4>${i+1}. ${e[0]}</h4><p>${e[1]}</p></div>`).join('');
+let fb=guide.forbidden.map(f=>`<li>${f}</li>`).join('');
+gPanel.innerHTML=`
+  <div class="card">
+    <h2 style="font-size:20px">💡 실적이 "0"이어도 합법적으로 파는 법</h2>
+    <p style="color:#5b616e;font-size:14px;margin-top:6px">와디즈의 '117억·월 2억' 같은 숫자는 대부분 <b>펀딩 총모금액(순익 아님)</b>이거나 <b>상위 0.1% 누적 실적</b>입니다. 그대로 따라 쓰면 거짓·과장광고입니다. 아래 8가지로 증거를 '대체'하세요.</p>
+    <div class="guide-grid" style="margin-top:14px">${evCards}</div>
+    <div class="warnbox"><b>⚠️ 절대 쓰면 안 되는 표현(광고법 위반)</b><ul style="margin:8px 0 0 18px">${fb}</ul></div>
+  </div>
+  <div class="card">
+    <h2 style="font-size:20px">💰 현실적 수익 추정 (보수적 초안)</h2>
+    <p style="color:#5b616e;font-size:14px;margin-top:6px">대부분 초기 6개월은 0에 가깝습니다. 건강한 1년차 목표는 <b>월 100~500만원</b>이며, '월 2억'은 극소수 상위 케이스입니다.</p>
+    <table class="rev-table">
+      <tr><th>#</th><th>사업</th><th>초기(0~6개월)</th><th>안정기(6~18개월)</th><th>비고</th></tr>
+      ${revRows}
+    </table>
+    <div class="goodbox" style="margin-top:14px">✅ <b>추천 시작 순서</b> — 자본·시간이 적다면 1·2·4번(완전 패시브), 천장을 노린다면 6·10번(MRR 누적형), 보유 자동화 자산을 살리려면 9·10번부터.</div>
+  </div>`;
+panels.appendChild(gPanel);
+
+// 사업 탭들
+businesses.forEach(b=>{
+  const t=document.createElement('button');
+  t.className='tab';t.textContent=`${b.rank}. ${b.name}`;
+  t.onclick=()=>activate('biz'+b.rank);
+  tabbar.appendChild(t);
+
+  const p=document.createElement('div');
+  p.className='panel';p.id='panel-biz'+b.rank;
+  const feats=b.feat.map(f=>`<li>${f}</li>`).join('');
+  const hls=b.hl.map((h,i)=>`<div class="h"><span>헤드라인 ${String.fromCharCode(65+i)}안</span>${h}</div>`).join('');
+  const faqs=b.faq.map(f=>`<div class="q">Q. ${f[0]}</div><div class="a">A. ${f[1]}</div>`).join('');
+  const blkContent={
+    Hook:b.hook,Agitation:b.agi,Solution:b.sol,
+    Feature:`<ul>${feats}</ul>`,
+    Evidence:`<span class="ev-tag">실적 0 신규 사업자용</span><br>${b.ev}`,
+    FAQ:`<div class="faq">${faqs}</div>`,
+    Price:`<div class="price">${b.price}</div>`,
+    CTA:`<div class="cta">${b.cta}</div>`
+  };
+  const blocks=BLK.map((bk,i)=>`
+    <div class="block">
+      <div class="bt"><span><span style="color:#3a6ff7">${i+1}.</span> ${bk[0]}</span><em>${bk[1]}</em></div>
+      <div class="bb">${blkContent[bk[0]]}</div>
+    </div>`).join('');
+
+  p.innerHTML=`
+    <div class="card">
+      <div class="biz-head">
+        <div class="rank">${b.rank}</div>
+        <div style="flex:1;min-width:200px">
+          <h2>${b.name}</h2>
+          <div class="one">${b.one}</div>
+        </div>
+      </div>
+      <div class="meta">
+        <span class="chip">🎯 ${b.target}</span>
+        <span class="chip gray">저관여·자동화 <span class="stars">${stars(b.low)}</span></span>
+        <span class="chip gray">수익잠재 <span class="stars">${stars(b.rev)}</span></span>
+      </div>
+      <div class="rev">
+        <div class="box early"><div class="lab">초기 월수익(0~6개월)</div><div class="val">${b.re.e}</div></div>
+        <div class="box stable"><div class="lab">안정기(6~18개월)</div><div class="val">${b.re.s}</div></div>
+        <div class="box ceil"><div class="lab">천장(상위 케이스)</div><div class="val">${b.re.c}</div></div>
+      </div>
+      <div style="font-size:12px;color:#5b616e;margin-top:8px">💳 과금 구조: ${b.re.u}</div>
+    </div>
+    <div class="card">
+      <div class="sec"><h3><span class="num">A</span>메인 후킹 헤드라인 (3안)</h3>${hls}</div>
+      <div class="sec"><h3><span class="num">B</span>와디즈 8블록 카피 초안</h3>${blocks}</div>
+    </div>`;
+  panels.appendChild(p);
+});
+
+function activate(id){
+  document.querySelectorAll('.tab').forEach(el=>el.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(el=>el.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  const idx = id==='guide'?0:parseInt(id.replace('biz',''));
+  tabbar.children[idx].classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

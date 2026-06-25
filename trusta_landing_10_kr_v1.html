@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TRUSTA 홈페이지 10종 초안 — 국내 v1 (와디즈 전환구조)</title>
+<style>
+  :root{
+    --bg:#eef1f6; --card:#ffffff; --ink:#16182b; --sub:#6b7280; --line:#e6e9f0;
+    --accent:#2b5cff; --accent-soft:#eaf0ff; --coral:#ff4d57; --coral-soft:#ffeced;
+    --gold:#f0a500; --green:#12b886; --shadow:0 8px 30px rgba(20,24,60,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+
+  /* Header */
+  header.top{background:linear-gradient(135deg,#101233,#23306b);color:#fff;padding:30px 0 22px}
+  header.top h1{font-size:24px;font-weight:800;letter-spacing:-.5px}
+  header.top p{color:#c8d0ee;font-size:14px;margin-top:6px}
+  .disclaimer{margin-top:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:10px 14px;font-size:12.5px;color:#ffe1c4}
+  .disclaimer b{color:#ffd089}
+
+  /* Tabs */
+  .tabbar{position:sticky;top:0;z-index:50;background:#fbfcff;border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(20,24,60,.04)}
+  .tabs{display:flex;gap:8px;overflow-x:auto;padding:12px 16px;max-width:1180px;margin:0 auto;scrollbar-width:thin}
+  .tabs::-webkit-scrollbar{height:6px}
+  .tabs::-webkit-scrollbar-thumb{background:#cdd4e4;border-radius:6px}
+  .tab{flex:0 0 auto;border:1px solid var(--line);background:#fff;color:var(--sub);border-radius:999px;padding:9px 15px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;transition:.15s;display:flex;align-items:center;gap:7px}
+  .tab .n{display:inline-flex;width:20px;height:20px;align-items:center;justify-content:center;background:#eef1f8;border-radius:50%;font-size:11px;font-weight:800;color:#8a93ad}
+  .tab:hover{border-color:#b9c4ea;color:var(--ink)}
+  .tab.active{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 6px 16px rgba(43,92,255,.3)}
+  .tab.active .n{background:rgba(255,255,255,.25);color:#fff}
+
+  /* Page */
+  .page{display:none;padding:26px 0 70px}
+  .page.active{display:block;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px}
+  .badge{font-size:12px;font-weight:700;padding:5px 11px;border-radius:8px}
+  .badge.cat{background:var(--accent-soft);color:var(--accent)}
+  .badge.target{background:#f1f3f7;color:#4b5563}
+  .badge.tier{background:var(--coral-soft);color:var(--coral)}
+
+  /* Blocks (Wadiz vertical detail flow) */
+  .doc{max-width:760px;margin:0 auto}
+  .block{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:14px;box-shadow:var(--shadow);position:relative}
+  .role{position:absolute;top:-10px;left:18px;font-size:11px;font-weight:800;letter-spacing:.4px;padding:3px 10px;border-radius:7px;color:#fff;text-transform:uppercase}
+  .r-hook{background:#2b5cff}.r-agi{background:#ff4d57}.r-sol{background:#12b886}.r-auth{background:#7b61ff}
+  .r-proof{background:#0ea5e9}.r-offer{background:#f0a500}.r-price{background:#16182b}.r-faq{background:#64748b}.r-cta{background:#ff2d55}.r-urg{background:#e11d48}
+  .block .label{font-size:11px;color:var(--sub);font-weight:700;margin-bottom:6px}
+  .hookbox{background:linear-gradient(135deg,#1b1f44,#2b3b86);color:#fff;border:none}
+  .hookbox h2{font-size:23px;font-weight:800;line-height:1.45;letter-spacing:-.4px}
+  .hookbox .role{background:#fff;color:#2b5cff}
+  .block h3{font-size:17px;font-weight:800;margin-bottom:7px;letter-spacing:-.3px}
+  .block p{font-size:15px;color:#33384a}
+  .block .big{font-size:16px;font-weight:700;color:var(--ink)}
+
+  ul.feat{list-style:none;margin-top:8px}
+  ul.feat li{padding:8px 0 8px 26px;position:relative;font-size:14.5px;border-bottom:1px dashed var(--line)}
+  ul.feat li:last-child{border-bottom:none}
+  ul.feat li:before{content:"✓";position:absolute;left:0;top:8px;color:var(--green);font-weight:900}
+
+  .faq-item{border-bottom:1px solid var(--line);padding:11px 0}
+  .faq-item:last-child{border-bottom:none}
+  .faq-item .q{font-weight:700;font-size:14.5px}
+  .faq-item .q:before{content:"Q. ";color:var(--accent)}
+  .faq-item .a{font-size:14px;color:var(--sub);margin-top:3px}
+  .faq-item .a:before{content:"A. ";color:var(--coral);font-weight:700}
+
+  .price-box{text-align:center}
+  .price-box .old{color:#9aa3b5;text-decoration:line-through;font-size:15px}
+  .price-box .now{font-size:30px;font-weight:900;color:var(--coral);margin:4px 0}
+  .price-box .now small{font-size:14px;color:var(--sub);font-weight:600}
+
+  .cta-btn{display:block;text-align:center;background:linear-gradient(135deg,#ff4d57,#ff2d55);color:#fff;font-weight:800;font-size:17px;padding:17px;border-radius:14px;margin-top:6px;box-shadow:0 10px 24px rgba(255,45,85,.32)}
+  .urg{text-align:center;color:var(--coral);font-size:13px;font-weight:700;margin-top:10px}
+
+  /* Revenue simulator card */
+  .rev{background:linear-gradient(180deg,#0d1130,#1a2150);color:#fff;border-radius:18px;padding:24px;margin:18px 0;box-shadow:0 14px 36px rgba(13,17,48,.3)}
+  .rev .rh{display:flex;align-items:center;gap:9px;font-size:18px;font-weight:800;margin-bottom:4px}
+  .rev .rsub{font-size:12.5px;color:#aab4e6;margin-bottom:16px}
+  .rev .first{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:11px;padding:11px 14px;font-size:13.5px;margin-bottom:16px}
+  .rev .first b{color:#7fffd4}
+  .scn{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px}
+  .scn .col{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:13px 11px;text-align:center}
+  .scn .col .nm{font-size:12px;font-weight:800;letter-spacing:.5px;padding:2px 9px;border-radius:6px;display:inline-block;margin-bottom:7px}
+  .scn .c0 .nm{background:#3b4570;color:#cbd3f5}.scn .c1 .nm{background:#1f7a5a;color:#a9ffe0}.scn .c2 .nm{background:#8a5a00;color:#ffd89a}
+  .scn .col .mo{font-size:12px;color:#aeb6d8}
+  .scn .col .cum{font-size:18px;font-weight:900;margin-top:4px}
+  .scn .col .as{font-size:11px;color:#8b93ba;margin-top:4px;line-height:1.4}
+  .bars{display:flex;align-items:flex-end;gap:14px;height:90px;padding:0 6px;margin-bottom:12px}
+  .bars .bar{flex:1;border-radius:8px 8px 0 0;position:relative;transition:.4s}
+  .bars .b0{background:#5566a8}.bars .b1{background:#16b886}.bars .b2{background:#f0a500}
+  .bars .bar span{position:absolute;top:-18px;left:0;right:0;text-align:center;font-size:11px;font-weight:800;color:#fff}
+  .calc{background:rgba(255,255,255,.05);border-radius:10px;padding:11px 13px;font-size:12.5px;color:#c7cef0;font-family:"D2Coding",monospace;line-height:1.6}
+  .calc b{color:#ffd089}
+  .rnote{font-size:11.5px;color:#ffb4b4;margin-top:11px;background:rgba(255,77,87,.12);border:1px solid rgba(255,77,87,.3);border-radius:9px;padding:9px 12px}
+  .rnote b{color:#ff8a90}
+
+  footer{text-align:center;color:var(--sub);font-size:12px;padding:30px 16px 50px}
+  @media(max-width:640px){.scn{grid-template-columns:1fr}.hookbox h2{font-size:20px}.wrap{padding:0 12px}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <h1>TRUSTA 홈페이지 10종 초안 · 국내 v1</h1>
+    <p>와디즈 전환구조(Hook→Agitation→Solution→Authority→Proof→Offer→Price→FAQ→CTA) 기반 · 각 탭 = 사업 1개</p>
+    <div class="disclaimer">
+      ⚠️ <b>전체 안내</b> — 카피는 <b>초안</b>이며 와디즈 금지표현 원칙(효과단정·수익보장·최초·100% 금지)을 따랐습니다.
+      💰 수익 시뮬레이션은 <b>가정값 기반 시나리오</b>이며 <b>수익을 보장하지 않습니다</b>. 실제 단가·유입·전환율로 교체해 검증하세요.
+    </div>
+  </div>
+</header>
+
+<div class="tabbar"><div class="tabs" id="tabs"></div></div>
+<div class="wrap" id="pages"></div>
+
+<footer>
+  TRUSTA Landing Draft · 국내 v1 · 생성: 2026-06-22 · 다음 단계: 확정 후 해외(영어권) 10종 현지화 버전 제작
+</footer>
+
+<script>
+const DATA = [
+  {
+    num:1, cat:"전자책 · 단건판매", target:"30~40대 직장인 개인투자자", tier:"★ 빠른 현금화",
+    hook:"10년 걸려 깨달을 매매 원칙을, 대가 10인의 머릿속을 빌려 한 권으로.",
+    agitation:"뉴스 보고 들어가면 고점, 무서워서 팔면 저점. 원칙 없이 감으로 매매하면 계좌는 늘 제자리입니다. 손절은 늦고, 익절은 빠르고, 물타기는 습관이 됩니다.",
+    solution:"워런 버핏부터 제시 리버모어까지, 검증된 투자 대가 10인의 '진입–분할–손절' 의사결정 로직을 하나의 매매 체계로 재구성했습니다. 종목 추천이 아니라, 스스로 판단하는 기준을 드립니다.",
+    authority:"MBA 출신이 수년간 직접 매매 기록을 남기며 정리한 체계입니다. 대가들의 어록이 아니라, 실제 매매에 적용 가능한 '행동 규칙'으로 번역했습니다.",
+    proof:"실제 매매 화면 기록(진입·분할·청산 시점)을 사례로 수록합니다. ※ 개인 매매 기록이며 동일한 결과를 보장하지 않습니다.",
+    offer:["대가 10인 매매 로직 본문","대가별 1페이지 요약 카드","매매 전 의사결정 체크리스트","평생 업데이트 제공"],
+    faq:[{q:"투자 초보도 이해되나요?",a:"용어 설명과 사례 중심이라 입문자도 따라올 수 있게 구성했습니다."},{q:"종목을 찍어주나요?",a:"아니요. 종목 추천이 아니라 스스로 판단하는 '기준'을 만드는 책입니다."}],
+    oldp:"49,000원", nowp:"29,000원", nows:"얼리버드 한정",
+    cta:"감으로 하는 매매를 멈추고, 지금 대가들의 기준을 가져가세요.",
+    urg:"얼리버드 수량 소진 시 정식가로 전환됩니다.",
+    rev:{model:"전자책 단건 판매", first:"사전판매 첫 주 약 <b>30~60만 원</b> (대기수요 가정)",
+      calc:"객단가 <b>29,000원</b> × (월 유입 × 구매전환율 <b>2%</b>) = 월 매출",
+      scn:[{nm:"보수",mo:"월 유입 1,500",cum:"1,044만",as:"월 30권 · 87만/월",val:1044},{nm:"기본",mo:"월 유입 3,000",cum:"2,088만",as:"월 60권 · 174만/월",val:2088},{nm:"공격",mo:"월 유입 6,000",cum:"4,176만",as:"월 120권 · 348만/월",val:4176}]}
+  },
+  {
+    num:2, cat:"전자책 · 단건판매", target:"투자 입문자", tier:"★ 빠른 현금화",
+    hook:"차트를 보기 전에, 대가들은 '이렇게' 먼저 생각했다.",
+    agitation:"기법은 넘쳐나는데 왜 내 계좌만 안 될까요? 문제는 기법이 아니라 '사고의 순서'입니다. 대가와 개미의 차이는 차트가 아니라 머릿속에 있습니다.",
+    solution:"버핏의 가치 판단, 달리오의 리스크 분산, 코스톨라니의 심리 사이클… 대가별 '사고의 틀'을 입문자도 따라 할 수 있는 단계로 정리했습니다.",
+    authority:"MBA 과정에서 다룬 투자 이론과 실제 시장의 간극을, 현장 언어로 메운 정리본입니다.",
+    proof:"각 사고법을 실제 시장 사건에 대입한 케이스를 함께 수록합니다. ※ 교육용 해석이며 투자 권유가 아닙니다.",
+    offer:["대가별 사고법 본문","사고 점검 체크리스트","입문자 용어집","하루 15분 챕터 구성"],
+    faq:[{q:"숫자/재무 몰라도 되나요?",a:"개념부터 쉬운 비유로 풀어 설명합니다."},{q:"분량이 부담되나요?",a:"하루 15분씩 읽도록 챕터를 잘게 나눴습니다."}],
+    oldp:"29,000원", nowp:"19,000원", nows:"런칭 기념가",
+    cta:"기법을 사기 전에, 먼저 대가처럼 생각하는 법부터.",
+    urg:"런칭 기념가는 조기 마감될 수 있습니다.",
+    rev:{model:"전자책 단건 판매", first:"런칭 첫 주 약 <b>20~40만 원</b> (대기수요 가정)",
+      calc:"객단가 <b>19,000원</b> × (월 유입 × 전환율 <b>2%</b>) = 월 매출",
+      scn:[{nm:"보수",mo:"월 유입 1,500",cum:"684만",as:"월 30권 · 57만/월",val:684},{nm:"기본",mo:"월 유입 3,000",cum:"1,368만",as:"월 60권 · 114만/월",val:1368},{nm:"공격",mo:"월 유입 6,000",cum:"2,736만",as:"월 120권 · 228만/월",val:2736}]}
+  },
+  {
+    num:3, cat:"구독 리포트", target:"변동성이 무서운 직장인 투자자", tier:"● 균형(현금흐름)",
+    hook:"언제 사고 언제 더 살지, 매번 흔들리는 분할매수에 '기준'을 드립니다.",
+    agitation:"한 번에 다 샀다가 물리고, 무서워서 못 사다가 놓치고. 분할매수가 좋은 건 알지만 '얼마씩, 언제'가 늘 막막합니다.",
+    solution:"세븐스플릿 방식을 기반으로, 시장 국면별 '이번 구간은 몇 차 분할' 가이드를 정기 리포트로 제공합니다. 종목 강요가 아니라 분할 '설계'를 돕습니다.",
+    authority:"분할매수·리스크 관리 로직을 수년간 정리·검증해 온 기준을 리포트화했습니다.",
+    proof:"과거 변동성 구간에서 분할 설계가 어떻게 작동했는지 회고 사례를 포함합니다. ※ 과거 사례이며 미래 수익을 보장하지 않습니다.",
+    offer:["주간 분할 가이드 리포트","국면별 구간 체크표","구독자 전용 업데이트","리스크 관리 원칙 가이드"],
+    faq:[{q:"리딩방인가요?",a:"아니요. 실시간 종목 지시가 아니라 분할 '원칙·구간' 설계 가이드입니다."},{q:"중도 해지 되나요?",a:"언제든 해지할 수 있습니다."}],
+    oldp:"", nowp:"월 29,000원", nows:"첫 달 9,900원 체험",
+    cta:"감정에 흔들리는 분할매수를 '설계'로 바꾸세요.",
+    urg:"체험가는 신규 구독자 한정입니다.",
+    rev:{model:"월 구독(MRR)", first:"첫 달 체험 전환 10~30명 → 약 <b>10~30만 원</b>",
+      calc:"월 구독 <b>29,000원</b> × 누적 구독자 = <b>MRR</b> (월 반복매출)",
+      scn:[{nm:"보수",mo:"12개월 후 50명",cum:"900만",as:"MRR 145만",val:900},{nm:"기본",mo:"150명",cum:"2,600만",as:"MRR 435만",val:2600},{nm:"공격",mo:"400명",cum:"7,000만",as:"MRR 1,160만",val:7000}]}
+  },
+  {
+    num:4, cat:"B2B SaaS", target:"화장품·의료 브랜드 마케터", tier:"◆ 자산형(SaaS)",
+    hook:"광고 한 줄 때문에 과징금? 발행 전, 광고법 리스크를 자동으로 걸러냅니다.",
+    agitation:"'미백·주름개선' 한 단어가 표시광고법·의료광고에 걸리면 수정·과징금·계정정지로 이어집니다. 매번 법무팀에 묻기엔 느리고, 안 묻자니 불안합니다.",
+    solution:"화장품·의료 광고 문구를 입력하면 위반 리스크(고/중/저)와 근거, 안전 대체 문구를 자동으로 제시합니다. 사람이 최종 판단하기 전, '리스크 플래그'로 1차 거릅니다.",
+    authority:"광고법 금지표현 데이터와 다단계 검증 로직(할루시네이션 최소화 설계)을 결합해 개발 중입니다.",
+    proof:"샘플 문구 검증 데모를 제공합니다. ※ 법적 판단을 대체하지 않는 리스크 플래그 보조 도구입니다.",
+    offer:["문구 광고법 리스크 검증","리스크 근거 리포트","안전 대체 문구 추천","팀 단위 협업 사용"],
+    faq:[{q:"법률 자문인가요?",a:"아니요. 발행 전 리스크를 빠르게 걸러주는 보조 도구이며, 최종 판단은 사람·전문가가 합니다."},{q:"어떤 분야를 지원하나요?",a:"화장품·건강기능·의료/병의원 광고 문구를 우선 지원합니다."}],
+    oldp:"", nowp:"월 99,000원~", nows:"스타터 / 팀 290,000원 · 베타 할인",
+    cta:"광고 사고가 터지기 전에, 발행 버튼 앞에서 한 번 거르세요.",
+    urg:"베타 가격은 정식 출시 시 인상될 예정입니다.",
+    rev:{model:"B2B 월 구독(MRR) · 개발 완료 가정 시점부터", first:"베타 유료전환 첫 3~5개사 → 약 <b>50~75만 원</b>",
+      calc:"ARPU(고객당 월매출) <b>150,000원</b> × 누적 고객사 = <b>MRR</b>",
+      scn:[{nm:"보수",mo:"12개월 후 20개사",cum:"1,800만",as:"MRR 300만",val:1800},{nm:"기본",mo:"60개사",cum:"5,400만",as:"MRR 900만",val:5400},{nm:"공격",mo:"150개사",cum:"13,000만",as:"MRR 2,250만",val:13000}]}
+  },
+  {
+    num:5, cat:"B2B SaaS", target:"마케팅 대행사 · 소상공인", tier:"◆ 자산형(SaaS)",
+    hook:"검증된 문구만, 정해진 시간에 자동으로. SNS 운영의 손을 뗍니다.",
+    agitation:"매일 콘텐츠 만들고, 법률 걱정하고, 시간 맞춰 올리고. SNS 운영은 사람을 갈아 넣는 일입니다.",
+    solution:"문구 광고법 검증 → 통과한 콘텐츠만 → 예약 시간에 자동 발행. 검증과 발행을 한 줄로 연결합니다.",
+    authority:"광고법 검증 엔진(TRUSTA)과 발행 자동화를 결합한 통합 워크플로우입니다.",
+    proof:"검증→발행 파이프라인 데모를 제공합니다. ※ 플랫폼 정책은 각 SNS사 기준을 따릅니다.",
+    offer:["문구 광고법 검증","예약·자동 발행","다채널 통합 관리","대행사용 다중 계정"],
+    faq:[{q:"여러 계정 되나요?",a:"대행사 플랜에서 다중 계정 관리를 지원합니다."},{q:"검증 없이 발행도 되나요?",a:"건너뛸 수 있으나, 통과 콘텐츠만 발행하도록 기본 설정됩니다."}],
+    oldp:"", nowp:"월 49,000원~", nows:"대행사 150,000원 · 초기 도입가",
+    cta:"콘텐츠 검증부터 발행까지, 한 번 세팅하고 손 떼세요.",
+    urg:"초기 도입가는 한정 인원입니다.",
+    rev:{model:"월 구독(MRR)", first:"첫 10개사 → 약 <b>49~70만 원</b>",
+      calc:"ARPU <b>70,000원</b> × 누적 고객 = <b>MRR</b>",
+      scn:[{nm:"보수",mo:"12개월 후 30곳",cum:"1,300만",as:"MRR 210만",val:1300},{nm:"기본",mo:"100곳",cum:"4,200만",as:"MRR 700만",val:4200},{nm:"공격",mo:"250곳",cum:"10,000만",as:"MRR 1,750만",val:10000}]}
+  },
+  {
+    num:6, cat:"SaaS · 시스템", target:"해외진출 브랜드", tier:"◆ 자산형(SaaS)",
+    hook:"한국 감성 그대로, 인도엔 인도식·미국엔 미국식. 현지 입맛 디자인을 자동 발행.",
+    agitation:"같은 디자인을 나라마다 다시 만들면 비용·시간이 폭발합니다. 그렇다고 한국 디자인 그대로 내보내면 '어색하다'는 반응만 돌아옵니다.",
+    solution:"브랜드 자산을 입력하면 타깃 국가 취향에 맞춰 디자인을 변형하고, SNS 자동 발행까지 연결합니다. 현지화와 발행을 한 흐름으로.",
+    authority:"국가별 디자인 선호 패턴과 자동 발행 파이프라인을 결합해 설계합니다.",
+    proof:"국가별 변형 샘플 비교 데모를 제공합니다. ※ 최종 디자인 승인은 사용자가 합니다.",
+    offer:["국가별 디자인 변형","SNS 자동 발행 연동","브랜드 템플릿 저장","핵심 톤 고정·현지 레이어 변형"],
+    faq:[{q:"내 브랜드 톤이 유지되나요?",a:"브랜드 핵심 요소는 고정하고 현지 취향 레이어만 변형합니다."},{q:"몇 개국 지원하나요?",a:"우선 주요 진출국부터 단계적으로 확장합니다."}],
+    oldp:"", nowp:"월 90,000원", nows:"프로젝트 단가 별도 · 파일럿",
+    cta:"나라마다 다시 만들지 말고, 한 번에 현지화해서 내보내세요.",
+    urg:"파일럿 파트너를 소수 모집합니다.",
+    rev:{model:"월 구독(MRR) + 프로젝트", first:"파일럿 3~5개사 → 약 <b>27~45만 원</b>",
+      calc:"ARPU <b>90,000원</b> × 누적 고객 = <b>MRR</b>",
+      scn:[{nm:"보수",mo:"12개월 후 20곳",cum:"1,100만",as:"MRR 180만",val:1100},{nm:"기본",mo:"60곳",cum:"3,200만",as:"MRR 540만",val:3200},{nm:"공격",mo:"150곳",cum:"8,000만",as:"MRR 1,350만",val:8000}]}
+  },
+  {
+    num:7, cat:"전자책 + 강의", target:"1인 사업자 · 블로거", tier:"★ 빠른 현금화",
+    hook:"구글 1페이지 + AI 검색 추천까지. 검색이 알아서 내 글을 데려오게.",
+    agitation:"열심히 써도 검색 2페이지 밖. 이제는 AI 검색까지 신경 써야 하는데, 뭘 어떻게 해야 할지 막막합니다.",
+    solution:"SEO(검색 최적화) + AEO·GEO(AI 검색 최적화)를 실전 체크리스트로 묶었습니다. 글로벌 권위 원칙을 한국 블로그 현실에 맞게 번역했습니다.",
+    authority:"글로벌 SEO 권위 자료(Backlinko류)를 정리·검증한 지식베이스에 운영 관점을 더했습니다.",
+    proof:"적용 전후 구조 개선 사례를 포함합니다. ※ 검색 순위는 플랫폼 알고리즘에 따라 달라집니다.",
+    offer:["SEO+GEO 실전 전자책","AI로 제작한 영상 강의","적용 체크리스트","바로 쓰는 템플릿"],
+    faq:[{q:"코딩을 알아야 하나요?",a:"비개발자 기준으로 설명합니다."},{q:"AI 검색 최적화가 뭔가요?",a:"챗봇·AI 검색이 내 글을 인용하도록 만드는 최신 전략입니다."}],
+    oldp:"99,000원", nowp:"69,000원", nows:"런칭가 한정",
+    cta:"검색이 나를 찾아오게 만드는 구조, 지금 세팅하세요.",
+    urg:"런칭가는 기간 한정입니다.",
+    rev:{model:"전자책+강의 패키지", first:"첫 주 약 <b>30~60만 원</b>",
+      calc:"객단가 <b>69,000원</b> × (월 유입 × 전환율 <b>1.5%</b>) = 월 매출",
+      scn:[{nm:"보수",mo:"월 유입 2,000",cum:"2,484만",as:"월 30건 · 207만/월",val:2484},{nm:"기본",mo:"월 유입 4,000",cum:"4,968만",as:"월 60건 · 414만/월",val:4968},{nm:"공격",mo:"월 유입 8,000",cum:"9,936만",as:"월 120건 · 828만/월",val:9936}]}
+  },
+  {
+    num:8, cat:"전자책 · 단건판매", target:"부업 희망 직장인", tier:"★ 빠른 현금화",
+    hook:"퇴근 후 2시간으로 시작하는, 콘텐츠 수익화 첫 90일 로드맵.",
+    agitation:"부업하고 싶은데 뭐부터 할지 모르겠고, 유튜브·블로그는 레드오션 같고. 시작도 못 하고 1년이 갑니다.",
+    solution:"채널 주제 선정부터 첫 수익까지, 90일 단위 실행 로드맵으로 정리했습니다. '오늘 뭘 하면 되는지'까지 떨어지게.",
+    authority:"콘텐츠·SEO 운영 경험과 자료를 실행 단계로 압축했습니다.",
+    proof:"단계별 체크 사례를 포함합니다. ※ 수익 시점·규모는 개인 실행에 따라 달라집니다.",
+    offer:["90일 실행 로드맵 전자책","주차별 플래너","주제 발굴 워크시트","AI 활용 최소노력 제작법"],
+    faq:[{q:"이미 늦지 않았나요?",a:"틈새 주제와 AI 활용으로 후발주자 전략을 다룹니다."},{q:"영상 편집을 못 해요",a:"AI 도구로 최소 노력 제작법을 포함합니다."}],
+    oldp:"29,000원", nowp:"19,000원", nows:"런칭가",
+    cta:"올해도 '생각만' 하지 말고, 90일 로드맵으로 시작하세요.",
+    urg:"런칭가 종료 후 가격이 오릅니다.",
+    rev:{model:"전자책 단건 판매", first:"첫 주 약 <b>20~40만 원</b>",
+      calc:"객단가 <b>19,000원</b> × (월 유입 × 전환율 <b>2%</b>) = 월 매출",
+      scn:[{nm:"보수",mo:"월 유입 1,500",cum:"684만",as:"월 30권 · 57만/월",val:684},{nm:"기본",mo:"월 유입 3,000",cum:"1,368만",as:"월 60권 · 114만/월",val:1368},{nm:"공격",mo:"월 유입 6,000",cum:"2,736만",as:"월 120권 · 228만/월",val:2736}]}
+  },
+  {
+    num:9, cat:"서비스 · SaaS", target:"강사 · 지식창업자", tier:"● 균형(자동화)",
+    hook:"대본만 주세요. 강의 영상은 AI가 만듭니다. 카메라도, 편집도 없이.",
+    agitation:"지식은 있는데 영상 강의 만들기가 벽입니다. 촬영 장비, 편집 시간, 외주 비용… 그래서 늘 미룹니다.",
+    solution:"텍스트 대본을 넣으면 리모션 기반으로 강의 영상을 자동 생성합니다. 슬라이드·자막·내레이션까지 한 번에.",
+    authority:"코드 기반 영상 자동화(리모션) 파이프라인으로 대량·일관 제작이 가능합니다.",
+    proof:"샘플 영상 자동 생성 데모를 제공합니다. ※ 최종 영상 검수는 사용자가 합니다.",
+    offer:["대본→영상 자동 생성","강의 템플릿","자막·내레이션 자동화","수정 후 재생성"],
+    faq:[{q:"내 목소리로 되나요?",a:"AI 음성 또는 업로드 음성 옵션을 지원할 예정입니다."},{q:"수정 가능한가요?",a:"슬라이드·자막을 수정한 뒤 재생성할 수 있습니다."}],
+    oldp:"", nowp:"편당 49,000원", nows:"월 구독 190,000원",
+    cta:"촬영·편집은 AI에 맡기고, 당신은 가르치는 것에만 집중하세요.",
+    urg:"초기 제작 단가는 한정 프로모션입니다.",
+    rev:{model:"구독(MRR) + 편당 결제", first:"첫 10건(편당) → 약 <b>49~190만 원</b>",
+      calc:"ARPU <b>130,000원</b> × 누적 고객 = <b>MRR</b> (편당 매출 별도)",
+      scn:[{nm:"보수",mo:"12개월 후 20명",cum:"1,600만",as:"MRR 260만",val:1600},{nm:"기본",mo:"60명",cum:"4,700만",as:"MRR 780만",val:4700},{nm:"공격",mo:"150명",cum:"11,000만",as:"MRR 1,950만",val:11000}]}
+  },
+  {
+    num:10, cat:"구독 리포트", target:"정보 과부하 투자자", tier:"● 균형(현금흐름)",
+    hook:"뉴스를 또 던져주는 리포트는 그만. '대가라면 이 뉴스를 어떻게 볼까'를 드립니다.",
+    agitation:"투자 뉴스·리포트는 넘치는데, 다 보고 나면 더 헷갈립니다. 정작 '그래서 어떻게 보라는 건데?'가 빠져 있습니다.",
+    solution:"주요 뉴스를 투자 대가 10인의 '사고 렌즈'로 해석해 드립니다. 단순 요약이 아니라 '관점'을 파는 차별화된 리포트.",
+    authority:"대가 사고법 정리본과 뉴스 큐레이션을 결합한 해석 프레임입니다.",
+    proof:"과거 이슈를 대가 렌즈로 해석한 회고 샘플을 포함합니다. ※ 해석·교육용이며 투자 권유가 아닙니다.",
+    offer:["주간 해석 리포트","대가 렌즈 요약 카드","해석 아카이브","첫 달 무료 체험"],
+    faq:[{q:"종목 추천인가요?",a:"아니요. 뉴스를 '어떻게 바라볼지'의 관점을 제공합니다."},{q:"다른 뉴스레터와 뭐가 다른가요?",a:"요약이 아니라 대가 사고 프레임으로 '해석'한다는 점입니다."}],
+    oldp:"", nowp:"월 19,000원", nows:"첫 달 무료 체험",
+    cta:"뉴스에 휘둘리지 말고, 대가의 렌즈로 시장을 읽으세요.",
+    urg:"무료 체험은 신규 한정입니다.",
+    rev:{model:"월 구독(MRR)", first:"첫 달 체험 전환 20~50명 → 약 <b>38~95만 원</b>",
+      calc:"월 구독 <b>19,000원</b> × 누적 구독자 = <b>MRR</b>",
+      scn:[{nm:"보수",mo:"12개월 후 100명",cum:"1,200만",as:"MRR 190만",val:1200},{nm:"기본",mo:"300명",cum:"3,400만",as:"MRR 570만",val:3400},{nm:"공격",mo:"800명",cum:"9,100만",as:"MRR 1,520만",val:9100}]}
+  }
+];
+
+const SHORT = ["주식대가10인","대가사고법","분할매수리포트","TRUSTA법률검증","SNS검증발행","현지화디자인","SEO·GEO마스터","수익화90일","AI영상강의","뉴스해석리포트"];
+
+function bar(scn){
+  const max = Math.max(...scn.map(s=>s.val));
+  return `<div class="bars">${scn.map((s,i)=>{
+    const h = Math.max(14, Math.round(s.val/max*88));
+    return `<div class="bar b${i}" style="height:${h}px"><span>${s.cum}</span></div>`;
+  }).join("")}</div>`;
+}
+
+function revCard(r){
+  return `<div class="rev">
+    <div class="rh">💰 예상 수익 시뮬레이션</div>
+    <div class="rsub">모델: ${r.model}</div>
+    <div class="first">⏱ 첫 수익(예상): ${r.first}</div>
+    ${bar(r.scn)}
+    <div class="scn">${r.scn.map((s,i)=>`
+      <div class="col c${i}"><span class="nm">${s.nm}</span>
+        <div class="mo">${s.mo}</div>
+        <div class="cum">${s.cum}원</div>
+        <div class="as">12개월 누적 · ${s.as}</div>
+      </div>`).join("")}</div>
+    <div class="calc">📐 계산식: ${r.calc}<br>※ 12개월 누적은 구독/판매가 점증한다고 가정한 합계 추정치</div>
+    <div class="rnote">🔴 <b>보장 아님</b> — 위 수치는 시장 일반 전환율(1~3%)·가정 단가 기준 <b>시나리오 추정</b>입니다. 실제 유입·전환·단가를 넣어 직접 검증하세요. (와디즈 '수익보장 금지' 원칙 준수)</div>
+  </div>`;
+}
+
+function block(role,cls,label,html){
+  return `<div class="block ${cls==='hook'?'hookbox':''}"><span class="role r-${role}">${label}</span>${html}</div>`;
+}
+
+function renderPage(d){
+  const feats = `<ul class="feat">${d.offer.map(o=>`<li>${o}</li>`).join("")}</ul>`;
+  const faqs = d.faq.map(f=>`<div class="faq-item"><div class="q">${f.q}</div><div class="a">${f.a}</div></div>`).join("");
+  return `<div class="page" id="page${d.num}">
+    <div class="doc">
+      <div class="meta">
+        <span class="badge cat">${d.cat}</span>
+        <span class="badge target">🎯 ${d.target}</span>
+        <span class="badge tier">${d.tier}</span>
+      </div>
+      ${block('hook','hook','HOOK',`<h2>${d.hook}</h2>`)}
+      ${block('agi','agi','AGITATION · 문제심화',`<p>${d.agitation}</p>`)}
+      ${block('sol','sol','SOLUTION · 해결',`<p class="big">${d.solution}</p>`)}
+      ${block('auth','auth','AUTHORITY · 권위',`<p>${d.authority}</p>`)}
+      ${block('proof','proof','PROOF · 증거',`<p>${d.proof}</p>`)}
+      ${block('offer','offer','OFFER · 구성',`<h3>이런 걸 드립니다</h3>${feats}`)}
+      ${revCard(d.rev)}
+      ${block('price','price','PRICE · 가격',`<div class="price-box">${d.oldp?`<div class="old">${d.oldp}</div>`:''}<div class="now">${d.nowp} <small>${d.nows}</small></div></div>`)}
+      ${block('faq','faq','FAQ',faqs)}
+      ${block('cta','cta','CTA · 행동유도',`<p class="big" style="text-align:center;margin-bottom:6px">${d.cta}</p><a class="cta-btn">지금 시작하기 →</a><div class="urg">⏰ ${d.urg}</div>`)}
+    </div>
+  </div>`;
+}
+
+const tabs = document.getElementById('tabs');
+const pages = document.getElementById('pages');
+DATA.forEach((d,i)=>{
+  const t = document.createElement('button');
+  t.className = 'tab'+(i===0?' active':'');
+  t.innerHTML = `<span class="n">${d.num}</span>${SHORT[i]}`;
+  t.onclick = ()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById('page'+d.num).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  };
+  tabs.appendChild(t);
+  pages.insertAdjacentHTML('beforeend', renderPage(d));
+});
+document.getElementById('page1').classList.add('active');
+</script>
+</body>
+</html>

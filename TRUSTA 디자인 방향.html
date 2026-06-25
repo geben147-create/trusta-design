@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TRUSTA 콘솔 · 디자인 방향</title>
+<link rel="stylesheet" href="_ds/wanted-design-system-019de97b-36e8-77cc-970a-db7606034015/colors_and_type.css" />
+<link rel="stylesheet" href="app/tokens.css" />
+<link rel="stylesheet" href="app/directions.css" />
+<!-- React 18 UMD -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js"
+  integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L"
+  crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"
+  integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm"
+  crossorigin="anonymous"></script>
+<!-- DS bundle (namespace setup) -->
+<script src="_ds/wanted-design-system-019de97b-36e8-77cc-970a-db7606034015/_ds_bundle.js"></script>
+<!-- Babel standalone for JSX -->
+<script src="https://unpkg.com/@babel/standalone@7.23.10/babel.min.js"></script>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body, #root { width: 100%; height: 100%; overflow: hidden; }
+  body { font-family: var(--w-font-sans, 'Pretendard JP', sans-serif); }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<!-- data (plain JS, no JSX) -->
+<script src="app/data.js"></script>
+
+<!-- shared atoms -->
+<script type="text/babel" src="app/shell.jsx"></script>
+
+<!-- design canvas -->
+<script type="text/babel" src="app/design-canvas.jsx"></script>
+
+<!-- 4 direction components -->
+<script type="text/babel" src="app/directions.jsx"></script>
+
+<!-- root render -->
+<script type="text/babel">
+  const { DirA, DirB, DirC, DirD } = window.DIRECTIONS;
+
+  function Root() {
+    return (
+      <DesignCanvas>
+        <DCSection
+          id="dirs"
+          title="TRUSTA 콘솔 · 디자인 방향 4종"
+          subtitle="HubSpot · Make.com 벤치마킹 — 스타일과 UX 연결 모델을 각각 다르게. 카드를 더블클릭하면 전체화면으로 비교됩니다.">
+          <DCArtboard
+            id="a"
+            label="A · HubSpot 안정형 — 사이드바 + 세로 미니플로우 (선형 스텝)"
+            width={1360} height={860}>
+            <DirA />
+          </DCArtboard>
+          <DCArtboard
+            id="b"
+            label="B · Make 시나리오 캔버스 — 노드 그래프가 곧 내비게이션 (공간형)"
+            width={1360} height={860}>
+            <DirB />
+          </DCArtboard>
+          <DCArtboard
+            id="c"
+            label="C · Ops 커맨드 대시보드 — 상단 탭 + 퍼널/KPI 허브 (데이터 우선)"
+            width={1360} height={860}>
+            <DirC />
+          </DCArtboard>
+          <DCArtboard
+            id="d"
+            label="D · 다크 시나리오 레일 — 아이콘 레일 + 상시 미니맵 (프로/포커스형)"
+            width={1360} height={860}>
+            <DirD />
+          </DCArtboard>
+        </DCSection>
+      </DesignCanvas>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById("root")).render(<Root />);
+</script>
+</body>
+</html>

@@ -1,0 +1,267 @@
+/* =========================================================================
+   Wanted Design System — Colors & Type
+   Source: Wanted Design System (Community).fig
+   Brand: Wanted (원티드) — Korean career/job platform by Wanted Lab
+   ========================================================================= */
+
+/* ── Fonts ──────────────────────────────────────────────────────────────── */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-jp.min.css");
+@import url("https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/complete/WantedSansVariable.min.css");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap");
+
+:root {
+  /* ── Atomic palette ─────────────────────────────────────────────────── */
+  --w-common-100: #ffffff;
+  --w-common-0:   #000000;
+
+  /* Neutral (grayscale) */
+  --w-neutral-99: #fcfcfc;
+  --w-neutral-95: #f7f7f8;
+  --w-neutral-90: #ececee;
+  --w-neutral-80: #dbdcdf;
+  --w-neutral-70: #c2c4c8;
+  --w-neutral-60: #aeb0b6;
+  --w-neutral-50: #989ba2;
+  --w-neutral-40: #878a92;
+  --w-neutral-30: #70737c;
+  --w-neutral-22: #46474c;
+  --w-neutral-20: #3d3e43;
+  --w-neutral-15: #2e2f33;
+  --w-neutral-10: #1f2024;
+  --w-neutral-5:  #131418;
+
+  /* Cool Neutral */
+  --w-cn-99: #fafafc;
+  --w-cn-97: #f4f4f5;
+  --w-cn-95: #eeeef0;
+  --w-cn-90: #e1e2e4;
+  --w-cn-80: #c2c4c8;
+  --w-cn-70: #a4a7ad;
+  --w-cn-60: #878a92;
+  --w-cn-50: #6b6e76;
+  --w-cn-40: #535660;
+  --w-cn-30: #3d3f48;
+  --w-cn-22: #2e2f3a;
+  --w-cn-20: #2a2c34;
+  --w-cn-15: #1f2129;
+  --w-cn-10: #14151b;
+
+  /* Blue — primary */
+  --w-blue-99: #f4f8ff;
+  --w-blue-95: #eaf2fe;
+  --w-blue-90: #d3e1fe;
+  --w-blue-80: #a8c5fc;
+  --w-blue-70: #7da9fb;
+  --w-blue-65: #6699fa;
+  --w-blue-60: #528bf9;
+  --w-blue-55: #3f7df9;
+  --w-blue-50: #3385ff;
+  --w-blue-45: #1170fb;
+  --w-blue-40: #0066ff;
+  --w-blue-30: #005eeb;
+  --w-blue-20: #004bbb;
+  --w-blue-10: #00388c;
+
+  /* Red */
+  --w-red-99: #fff5f5;
+  --w-red-95: #ffe5e5;
+  --w-red-90: #ffc7c7;
+  --w-red-80: #ff8e8e;
+  --w-red-70: #ff5f5f;
+  --w-red-60: #ff4242;
+  --w-red-50: #f53b3b;
+  --w-red-40: #d92e2e;
+  --w-red-30: #b22020;
+  --w-red-20: #8b1818;
+  --w-red-10: #5a0e0e;
+
+  /* Green */
+  --w-green-99: #f0fdf4;
+  --w-green-95: #dafbe5;
+  --w-green-90: #b3f4c8;
+  --w-green-80: #66e092;
+  --w-green-70: #20cf63;
+  --w-green-60: #00bf40;
+  --w-green-50: #00a637;
+  --w-green-40: #008a2e;
+  --w-green-30: #006b22;
+  --w-green-20: #004d18;
+  --w-green-10: #00310f;
+
+  /* Violet */
+  --w-violet-99: #f7f5ff;
+  --w-violet-95: #f0ecfe;
+  --w-violet-90: #e2dafe;
+  --w-violet-80: #c1b0fc;
+  --w-violet-70: #a586fa;
+  --w-violet-60: #8c63f8;
+  --w-violet-50: #7849f4;
+  --w-violet-45: #6e3ff3;
+  --w-violet-40: #6541f2;
+  --w-violet-30: #4d2bd2;
+  --w-violet-20: #371a9f;
+  --w-violet-10: #220c69;
+
+  /* Misc */
+  --w-cyan-50:        #0098b2;
+  --w-light-blue-50:  #00b0e0;
+  --w-lime-37:        #62a700;
+  --w-red-orange-40:  #ff6638;
+
+  /* Pastels */
+  --w-pastel-blue-50:    #e8f1ff;
+  --w-pastel-blue-100:   #cfe2ff;
+  --w-pastel-blue-200:   #a8c5fc;
+  --w-pastel-mint-50:    #e0f7ee;
+  --w-pastel-mint-100:   #b8ecd5;
+  --w-pastel-mint-200:   #8ddcb8;
+  --w-pastel-lemon-50:   #fff8d6;
+  --w-pastel-lemon-100:  #ffefa1;
+  --w-pastel-lemon-200:  #ffe066;
+  --w-pastel-peach-50:   #ffece1;
+  --w-pastel-peach-100:  #ffd6bd;
+  --w-pastel-peach-200:  #ffb892;
+  --w-pastel-rose-50:    #ffe5ec;
+  --w-pastel-rose-100:   #ffc4d4;
+  --w-pastel-rose-200:   #ff9bb6;
+  --w-pastel-lilac-50:   #f0eaff;
+  --w-pastel-lilac-100:  #d9c9ff;
+  --w-pastel-lilac-200:  #bba3fb;
+  --w-pastel-sky-50:     #e2f5fb;
+  --w-pastel-sky-100:    #b8e6f4;
+  --w-pastel-sky-200:    #8bd3ea;
+  --w-pastel-sand-50:    #f6efe4;
+  --w-pastel-sand-100:   #ead9bd;
+  --w-pastel-sand-200:   #d8bf94;
+
+  /* ── Semantic — Light theme ─────────────────────────────────────────── */
+  --w-bg-base:           #ffffff;
+  --w-bg-subtle:         #f7f7f8;
+  --w-bg-muted:          #ececee;
+  --w-bg-hover:          rgba(112,115,124,0.08);
+  --w-bg-pressed:        rgba(112,115,124,0.16);
+
+  --w-fg-strong:         #17171b;
+  --w-fg-default:        #2e2f33;
+  --w-fg-muted:          rgba(46,47,51,0.88);
+  --w-fg-subtle:         rgba(55,56,60,0.61);
+  --w-fg-disabled:       rgba(55,56,60,0.28);
+  --w-fg-on-color:       #ffffff;
+
+  --w-border-default:    rgba(112,115,124,0.22);
+  --w-border-subtle:     rgba(112,115,124,0.12);
+  --w-border-strong:     rgba(112,115,124,0.42);
+  --w-divider:           #000000;
+
+  --w-color-primary:     #0066ff;
+  --w-color-primary-hover: #005eeb;
+  --w-color-primary-pressed: #004bbb;
+  --w-color-primary-bg:  #eaf2fe;
+  --w-color-danger:      #ff4242;
+  --w-color-danger-bg:   #ffe5e5;
+  --w-color-success:     #00bf40;
+  --w-color-success-bg:  #dafbe5;
+  --w-color-info:        #3385ff;
+  --w-color-info-bg:     #eaf2fe;
+  --w-color-accent:      #6541f2;
+  --w-color-accent-bg:   #f0ecfe;
+
+  /* ── Shadows / Elevation ────────────────────────────────────────────── */
+  --w-shadow-1: 0 1px 2px rgba(23,23,23,0.06), 0 1px 3px rgba(23,23,23,0.07);
+  --w-shadow-2: 0 2px 4px rgba(23,23,23,0.07), 0 4px 8px rgba(23,23,23,0.06);
+  --w-shadow-3: 0 4px 8px rgba(0,0,0,0.08),  0 8px 24px rgba(0,0,0,0.12);
+  --w-shadow-4: 0 8px 16px rgba(0,0,0,0.10), 0 16px 40px rgba(0,0,0,0.16);
+
+  /* ── Radii ──────────────────────────────────────────────────────────── */
+  --w-radius-xs:   4px;
+  --w-radius-sm:   8px;
+  --w-radius-md:   12px;
+  --w-radius-lg:   16px;
+  --w-radius-xl:   24px;
+  --w-radius-2xl:  32px;
+  --w-radius-pill: 999px;
+
+  /* ── Spacing scale (4px base) ───────────────────────────────────────── */
+  --w-space-0:   0px;  --w-space-1:   2px;  --w-space-2:   4px;
+  --w-space-3:   8px;  --w-space-4:   12px; --w-space-5:   16px;
+  --w-space-6:   20px; --w-space-7:   24px; --w-space-8:   32px;
+  --w-space-9:   40px; --w-space-10:  48px; --w-space-11:  56px;
+  --w-space-12:  64px; --w-space-13:  80px; --w-space-14:  96px;
+  --w-space-15:  128px;
+
+  /* ── Type families ──────────────────────────────────────────────────── */
+  --w-font-sans:    "Pretendard JP", "Pretendard", -apple-system, BlinkMacSystemFont,
+                    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --w-font-display: "Wanted Sans Variable", "Wanted Sans", "Pretendard JP", sans-serif;
+  --w-font-mono:    "SF Mono", "JetBrains Mono", ui-monospace, Menlo, Monaco, monospace;
+}
+
+/* ── Type tokens ────────────────────────────────────────────────────────── */
+:root {
+  --w-t-display-1:   700 56px/1.25   var(--w-font-sans);
+  --w-t-display-1-ls: -0.0282em;
+  --w-t-display-2:   700 40px/1.3    var(--w-font-sans);
+  --w-t-display-2-ls: -0.0282em;
+  --w-t-display-3:   700 36px/1.334  var(--w-font-sans);
+  --w-t-display-3-ls: -0.027em;
+  --w-t-title-1:     700 32px/1.375  var(--w-font-sans);
+  --w-t-title-1-ls:  -0.0253em;
+  --w-t-title-2:     700 28px/1.358  var(--w-font-sans);
+  --w-t-title-2-ls:  -0.024em;
+  --w-t-title-3:     700 24px/1.334  var(--w-font-sans);
+  --w-t-title-3-ls:  -0.023em;
+  --w-t-heading-1:   700 22px/1.364  var(--w-font-sans);
+  --w-t-heading-1-ls: -0.0194em;
+  --w-t-heading-2:   700 20px/1.4    var(--w-font-sans);
+  --w-t-heading-2-ls: -0.012em;
+  --w-t-headline-1:  600 18px/1.445  var(--w-font-sans);
+  --w-t-headline-1-ls: -0.002em;
+  --w-t-headline-2:  600 17px/1.412  var(--w-font-sans);
+  --w-t-headline-2-ls: 0em;
+  --w-t-body-1:      500 16px/1.5    var(--w-font-sans);
+  --w-t-body-1-read: 500 16px/1.625  var(--w-font-sans);
+  --w-t-body-1-ls:   0.0057em;
+  --w-t-body-2:      500 15px/1.467  var(--w-font-sans);
+  --w-t-body-2-read: 500 15px/1.6    var(--w-font-sans);
+  --w-t-body-2-ls:   0.0096em;
+  --w-t-label-1:     600 14px/1.429  var(--w-font-sans);
+  --w-t-label-1-read: 600 14px/1.571 var(--w-font-sans);
+  --w-t-label-1-ls:  0.0145em;
+  --w-t-label-2:     600 13px/1.385  var(--w-font-sans);
+  --w-t-label-2-ls:  0.0194em;
+  --w-t-caption-1:   500 12px/1.334  var(--w-font-sans);
+  --w-t-caption-1-ls: 0.0252em;
+  --w-t-caption-2:   500 11px/1.273  var(--w-font-sans);
+  --w-t-caption-2-ls: 0.0311em;
+}
+
+/* ── Utility classes ────────────────────────────────────────────────────── */
+.w-display-1 { font: var(--w-t-display-1);   letter-spacing: var(--w-t-display-1-ls); }
+.w-display-2 { font: var(--w-t-display-2);   letter-spacing: var(--w-t-display-2-ls); }
+.w-display-3 { font: var(--w-t-display-3);   letter-spacing: var(--w-t-display-3-ls); }
+.w-title-1   { font: var(--w-t-title-1);     letter-spacing: var(--w-t-title-1-ls); }
+.w-title-2   { font: var(--w-t-title-2);     letter-spacing: var(--w-t-title-2-ls); }
+.w-title-3   { font: var(--w-t-title-3);     letter-spacing: var(--w-t-title-3-ls); }
+.w-heading-1 { font: var(--w-t-heading-1);   letter-spacing: var(--w-t-heading-1-ls); }
+.w-heading-2 { font: var(--w-t-heading-2);   letter-spacing: var(--w-t-heading-2-ls); }
+.w-headline-1{ font: var(--w-t-headline-1);  letter-spacing: var(--w-t-headline-1-ls); }
+.w-headline-2{ font: var(--w-t-headline-2);  letter-spacing: var(--w-t-headline-2-ls); }
+.w-body-1    { font: var(--w-t-body-1);      letter-spacing: var(--w-t-body-1-ls); }
+.w-body-1r   { font: var(--w-t-body-1-read); letter-spacing: var(--w-t-body-1-ls); }
+.w-body-2    { font: var(--w-t-body-2);      letter-spacing: var(--w-t-body-2-ls); }
+.w-body-2r   { font: var(--w-t-body-2-read); letter-spacing: var(--w-t-body-2-ls); }
+.w-label-1   { font: var(--w-t-label-1);     letter-spacing: var(--w-t-label-1-ls); }
+.w-label-1r  { font: var(--w-t-label-1-read);letter-spacing: var(--w-t-label-1-ls); }
+.w-label-2   { font: var(--w-t-label-2);     letter-spacing: var(--w-t-label-2-ls); }
+.w-caption-1 { font: var(--w-t-caption-1);   letter-spacing: var(--w-t-caption-1-ls); }
+.w-caption-2 { font: var(--w-t-caption-2);   letter-spacing: var(--w-t-caption-2-ls); }
+
+/* ── Element resets ─────────────────────────────────────────────────────── */
+html, body { font-family: var(--w-font-sans); color: var(--w-fg-strong); background: var(--w-bg-base); }
+h1 { font: var(--w-t-title-1); letter-spacing: var(--w-t-title-1-ls); margin: 0; }
+h2 { font: var(--w-t-title-3); letter-spacing: var(--w-t-title-3-ls); margin: 0; }
+h3 { font: var(--w-t-heading-1); letter-spacing: var(--w-t-heading-1-ls); margin: 0; }
+h4 { font: var(--w-t-heading-2); letter-spacing: var(--w-t-heading-2-ls); margin: 0; }
+p, li { font: var(--w-t-body-1); letter-spacing: var(--w-t-body-1-ls); color: var(--w-fg-default); margin: 0; }
+small { font: var(--w-t-caption-1); letter-spacing: var(--w-t-caption-1-ls); color: var(--w-fg-subtle); }
+code, pre { font-family: var(--w-font-mono); font-size: 14px; }

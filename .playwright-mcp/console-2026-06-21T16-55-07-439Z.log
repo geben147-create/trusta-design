@@ -1,0 +1,27 @@
+[     542ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js:29904
+[     803ms] [WARNING] You are using the in-browser Babel transformer. Be sure to precompile your scripts for production - https://babeljs.io/docs/setup/ @ https://unpkg.com/@babel/standalone@7.29.0/babel.min.js:2
+[     820ms] t: .targets["esmodules"] must be a boolean, or undefined
+    at SV (https://unpkg.com/@babel/standalone@7.29.0/babel.min.js:3:1126275)
+    at FEe (https://unpkg.com/@babel/standalone@7.29.0/babel.min.js:3:3132179)
+    at https://unpkg.com/@babel/standalone@7.29.0/babel.min.js:3:3127986
+    at SEe (https://unpkg.com/@babel/standalone@7.29.0/babel.min.js:3:3128384)
+    at n (https://unpkg.com/@babel/standalone@7.29.0/babel.min.js:3:3128645)
+    at a (https://unpkg.com/@babel/standalone@7.29.0/babel.min.js:3:3129038)
+    at d.src.i.onreadystatechange (https://unpkg.com/@babel/standalone@7.29.0/babel.min.js:3:3129295)
+[     822ms] t: .targets["esmodules"] must be a boolean, or undefined
+    at SV (https://unpkg.com/@babel/standalone@7.29.0/babel.min.js:3:1126275)
+    at FEe (https://unpkg.com/@babel/standalone@7.29.0/babel.min.js:3:3132179)
+    at https://unpkg.com/@babel/standalone@7.29.0/babel.min.js:3:3127986
+    at SEe (https://unpkg.com/@babel/standalone@7.29.0/babel.min.js:3:3128384)
+    at n (https://unpkg.com/@babel/standalone@7.29.0/babel.min.js:3:3128645)
+    at a (https://unpkg.com/@babel/standalone@7.29.0/babel.min.js:3:3129038)
+    at d.src.i.onreadystatechange (https://unpkg.com/@babel/standalone@7.29.0/babel.min.js:3:3129295)
+[     822ms] t: .targets["esmodules"] must be a boolean, or undefined
+    at SV (https://unpkg.com/@babel/standalone@7.29.0/babel.min.js:3:1126275)
+    at FEe (https://unpkg.com/@babel/standalone@7.29.0/babel.min.js:3:3132179)
+    at https://unpkg.com/@babel/standalone@7.29.0/babel.min.js:3:3127986
+    at SEe (https://unpkg.com/@babel/standalone@7.29.0/babel.min.js:3:3128384)
+    at n (https://unpkg.com/@babel/standalone@7.29.0/babel.min.js:3:3128645)
+    at a (https://unpkg.com/@babel/standalone@7.29.0/babel.min.js:3:3129038)
+    at d.src.i.onreadystatechange (https://unpkg.com/@babel/standalone@7.29.0/babel.min.js:3:3129295)
+[     822ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:7771/favicon.ico:0

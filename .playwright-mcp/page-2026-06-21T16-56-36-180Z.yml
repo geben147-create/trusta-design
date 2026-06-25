@@ -1,0 +1,612 @@
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: TRUSTA 콘솔 · 디자인 방향
+      - generic [ref=e7]: 디자인 탐색 캔버스 · 더블클릭→전체화면, 스크롤→줌
+    - generic [ref=e9]:
+      - generic [ref=e10] [cursor=pointer]: −
+      - generic [ref=e11]: 50%
+      - generic [ref=e12] [cursor=pointer]: +
+    - generic [ref=e14] [cursor=pointer]:
+      - img [ref=e15]
+      - text: 포스트잇 켜기
+    - generic [ref=e18] [cursor=pointer]: 초기화
+  - generic [ref=e21]:
+    - generic [ref=e22]:
+      - heading "TRUSTA 콘솔 · 디자인 방향 4종" [level=2] [ref=e23]
+      - paragraph [ref=e24]: HubSpot · Make.com 벤치마킹 — 스타일과 UX 연결 모델을 각각 다르게. 카드를 더블클릭하면 전체화면으로 비교됩니다.
+    - generic [ref=e25]:
+      - generic [ref=e26]:
+        - generic [ref=e27]:
+          - generic [ref=e28]: A · HubSpot 안정형 — 사이드바 + 세로 미니플로우 (선형 스텝)
+          - generic [ref=e29]: 1360×860
+          - generic [ref=e30]:
+            - generic "이름 변경" [ref=e31] [cursor=pointer]:
+              - img [ref=e32]
+            - generic "전체화면" [ref=e34] [cursor=pointer]:
+              - img [ref=e35]
+            - generic "PNG 저장" [ref=e40] [cursor=pointer]:
+              - img [ref=e41]
+        - generic [ref=e45]:
+          - generic [ref=e46]:
+            - generic [ref=e47]:
+              - generic [ref=e48]: T
+              - generic [ref=e49]: TRUSTA
+              - generic [ref=e50]: Staging
+            - generic [ref=e51]:
+              - generic [ref=e52]:
+                - img [ref=e53]
+                - generic [ref=e56]: Import Inbox
+                - generic [ref=e57]: "1"
+              - generic [ref=e58]:
+                - img [ref=e59]
+                - generic [ref=e64]: Asset Library
+                - generic [ref=e65]: "2"
+              - generic [ref=e66]:
+                - img [ref=e67]
+                - generic [ref=e71]: Asset Group
+                - generic [ref=e72]: "3"
+              - generic [ref=e73]:
+                - img [ref=e74]
+                - generic [ref=e77]: Calendar Planner
+                - generic [ref=e78]: "4"
+              - generic [ref=e79]:
+                - img [ref=e80]
+                - generic [ref=e83]: Review · Approval
+                - generic [ref=e84]: "5"
+              - generic [ref=e85]:
+                - img [ref=e86]
+                - generic [ref=e88]: Operations
+                - generic [ref=e89]: "6"
+          - generic [ref=e90]:
+            - generic [ref=e91]:
+              - generic [ref=e92]:
+                - img [ref=e94]
+                - text: Import
+              - img [ref=e96]
+              - generic [ref=e98]:
+                - generic [ref=e99]: "2"
+                - text: Library
+              - img [ref=e100]
+              - generic [ref=e102]:
+                - generic [ref=e103]: "3"
+                - text: Group
+              - img [ref=e104]
+              - generic [ref=e106]:
+                - generic [ref=e107]: "4"
+                - text: Calendar
+              - img [ref=e108]
+              - generic [ref=e110]:
+                - generic [ref=e111]: "5"
+                - text: Review
+              - img [ref=e112]
+              - generic [ref=e114]:
+                - generic [ref=e115]: "6"
+                - text: Ops
+              - button "다음 단계 · Group" [ref=e117] [cursor=pointer]:
+                - text: 다음 단계 · Group
+                - img [ref=e118]
+            - generic [ref=e120]:
+              - generic [ref=e121]:
+                - generic [ref=e122]:
+                  - generic [ref=e123]: Asset Library
+                  - generic [ref=e124]: 분류된 자산 16건 · 출처·규격·그룹으로 탐색
+                - button "그룹 만들기" [ref=e126] [cursor=pointer]:
+                  - img [ref=e127]
+                  - text: 그룹 만들기
+              - generic [ref=e129]:
+                - generic [ref=e130]:
+                  - img [ref=e131]
+                  - text: 채널
+                - generic [ref=e132]:
+                  - img [ref=e133]
+                  - text: 규격 (11)
+                - generic [ref=e134]:
+                  - img [ref=e135]
+                  - text: 출처 (4)
+                - generic [ref=e136]:
+                  - img [ref=e137]
+                  - text: 그룹
+              - generic [ref=e138]:
+                - generic [ref=e139]:
+                  - generic [ref=e141]:
+                    - img [ref=e143]
+                    - generic [ref=e145]: 영상
+                    - generic [ref=e146]: 1:48
+                  - generic [ref=e147]:
+                    - generic [ref=e148]: 신뢰지수 2.0 브랜드 필름
+                    - generic [ref=e149]:
+                      - generic [ref=e150]:
+                        - img [ref=e151]
+                        - text: 영상
+                      - generic "직접 업로드" [ref=e154]:
+                        - img [ref=e155]
+                    - generic [ref=e158]:
+                      - generic [ref=e159]:
+                        - img [ref=e160]
+                        - text: AI 96%
+                      - generic [ref=e163]: 예약됨
+                - generic [ref=e165]:
+                  - generic [ref=e167]:
+                    - img [ref=e168]
+                    - generic [ref=e172]: 썸네일
+                  - generic [ref=e173]:
+                    - generic [ref=e174]: 신뢰지수 키 비주얼 썸네일
+                    - generic [ref=e175]:
+                      - generic [ref=e176]:
+                        - img [ref=e177]
+                        - text: 썸네일
+                      - generic "AI 생성" [ref=e181]:
+                        - img [ref=e182]
+                    - generic [ref=e185]:
+                      - generic [ref=e186]:
+                        - img [ref=e187]
+                        - text: AI 88%
+                      - generic [ref=e190]: 예약됨
+                - generic [ref=e192]:
+                  - generic [ref=e194]:
+                    - img [ref=e195]
+                    - generic [ref=e197]: 캡션
+                  - generic [ref=e198]:
+                    - generic [ref=e199]: 캠페인 메인 카피 캡션
+                    - generic [ref=e200]:
+                      - generic [ref=e201]:
+                        - img [ref=e202]
+                        - text: 캡션
+                      - generic "AI 생성" [ref=e204]:
+                        - img [ref=e205]
+                    - generic [ref=e208]:
+                      - generic [ref=e209]:
+                        - img [ref=e210]
+                        - text: AI 74%
+                      - generic [ref=e213]: 예약됨
+                - generic [ref=e215]:
+                  - generic [ref=e217]:
+                    - img [ref=e218]
+                    - generic [ref=e223]: 카드뉴스
+                  - generic [ref=e224]:
+                    - generic [ref=e225]: 보안 점검 5단계 카드뉴스
+                    - generic [ref=e226]:
+                      - generic [ref=e227]:
+                        - img [ref=e228]
+                        - text: 카드뉴스
+                      - generic "직접 업로드" [ref=e233]:
+                        - img [ref=e234]
+                    - generic [ref=e237]:
+                      - generic [ref=e238]:
+                        - img [ref=e239]
+                        - text: AI 93%
+                      - generic [ref=e242]: 검수중
+                - generic [ref=e244]:
+                  - generic [ref=e246]:
+                    - img [ref=e247]
+                    - generic [ref=e252]: 카드뉴스
+                  - generic [ref=e253]:
+                    - generic [ref=e254]: 2FA 안내 카드뉴스
+                    - generic [ref=e255]:
+                      - generic [ref=e256]:
+                        - img [ref=e257]
+                        - text: 카드뉴스
+                      - generic "AI 생성" [ref=e262]:
+                        - img [ref=e263]
+                    - generic [ref=e266]:
+                      - generic [ref=e267]:
+                        - img [ref=e268]
+                        - text: AI 67%
+                      - generic [ref=e271]: 검수중
+                - generic [ref=e273]:
+                  - generic [ref=e275]:
+                    - img [ref=e277]
+                    - generic [ref=e279]: 쇼츠
+                    - generic [ref=e280]: 0:58
+                  - generic [ref=e281]:
+                    - generic [ref=e282]: 창업자 김도현 인터뷰 쇼츠
+                    - generic [ref=e283]:
+                      - generic [ref=e284]:
+                        - img [ref=e285]
+                        - text: 쇼츠
+                      - generic "직접 업로드" [ref=e287]:
+                        - img [ref=e288]
+                    - generic [ref=e291]:
+                      - generic [ref=e292]:
+                        - img [ref=e293]
+                        - text: AI 91%
+                      - generic [ref=e296]: 승인됨
+          - generic [ref=e298]:
+            - generic [ref=e299]:
+              - generic [ref=e300]:
+                - img [ref=e301]
+                - text: 자동화 흐름
+              - generic [ref=e305]: 라이브러리 · 16 assets
+            - generic [ref=e307]:
+              - generic [ref=e308]:
+                - img [ref=e310]
+                - generic [ref=e312]:
+                  - generic [ref=e313]: AI Classify
+                  - generic [ref=e314]: 16 분류완료
+              - img [ref=e316]
+              - generic [ref=e318]:
+                - img [ref=e320]
+                - generic [ref=e325]:
+                  - generic [ref=e326]: Library store
+                  - generic [ref=e327]: 현재 위치
+              - img [ref=e330]
+              - generic [ref=e332]:
+                - img [ref=e334]
+                - generic [ref=e338]:
+                  - generic [ref=e339]: Group
+                  - generic [ref=e340]: 대기
+              - img [ref=e342]
+              - generic [ref=e344]:
+                - img [ref=e346]
+                - generic [ref=e349]:
+                  - generic [ref=e350]: Calendar
+                  - generic [ref=e351]: 대기
+      - generic [ref=e352]:
+        - generic [ref=e353]:
+          - generic [ref=e354]: B · Make 시나리오 캔버스 — 노드 그래프가 곧 내비게이션 (공간형)
+          - generic [ref=e355]: 1360×860
+          - generic [ref=e356]:
+            - generic "이름 변경" [ref=e357] [cursor=pointer]:
+              - img [ref=e358]
+            - generic "전체화면" [ref=e360] [cursor=pointer]:
+              - img [ref=e361]
+            - generic "PNG 저장" [ref=e366] [cursor=pointer]:
+              - img [ref=e367]
+        - generic [ref=e371]:
+          - generic [ref=e372]:
+            - generic [ref=e373]: T
+            - img [ref=e375]
+            - img [ref=e380]
+            - img [ref=e384]
+            - img [ref=e390]
+            - img [ref=e394]
+          - generic [ref=e396]:
+            - generic [ref=e397]:
+              - img [ref=e398]
+              - text: 시나리오 · TRUSTA 발행 파이프라인
+            - generic [ref=e402]: scheduled · 검수 2
+            - generic [ref=e404]:
+              - generic [ref=e405]:
+                - img [ref=e406]
+                - text: 자동배치
+              - generic [ref=e408]:
+                - img [ref=e409]
+                - text: 흐름 실행
+          - generic [ref=e411]:
+            - img
+            - generic [ref=e412]:
+              - generic [ref=e413]:
+                - img [ref=e415]
+                - generic [ref=e418]: "7"
+              - generic [ref=e419]: 1. Import
+              - generic [ref=e420]: 수신
+            - generic [ref=e421]:
+              - generic [ref=e422]:
+                - img [ref=e424]
+                - generic [ref=e429]: "16"
+              - generic [ref=e430]: 2. Library
+              - generic [ref=e431]: 저장소
+            - generic [ref=e432]:
+              - generic [ref=e433]:
+                - img [ref=e435]
+                - generic [ref=e439]: "6"
+              - generic [ref=e440]: 3. Group
+              - generic [ref=e441]: 조립중
+            - generic [ref=e442]:
+              - generic [ref=e443]:
+                - img [ref=e445]
+                - generic [ref=e448]: "6"
+              - generic [ref=e449]: 4. Calendar
+              - generic [ref=e450]: scheduled
+            - generic [ref=e451]:
+              - generic [ref=e452]:
+                - img [ref=e454]
+                - generic [ref=e457]: "3"
+              - generic [ref=e458]: 5. Review
+              - generic [ref=e459]: 검수 대기
+            - generic [ref=e460]:
+              - generic [ref=e461]:
+                - img [ref=e463]
+                - generic [ref=e466]: "11"
+              - generic [ref=e467]: 6. Publish
+              - generic [ref=e468]: 잠금
+            - generic [ref=e469]:
+              - generic [ref=e470]: 완료
+              - generic [ref=e472]: 처리중
+              - generic [ref=e474]: 예약
+              - generic [ref=e476]: 대기
+              - generic [ref=e478]: 잠금
+          - generic [ref=e480]:
+            - generic [ref=e481]:
+              - img [ref=e482]
+              - text: 3. Group · 단계 상세
+            - generic [ref=e486]: Q3 신뢰지수 캠페인
+            - generic [ref=e487]:
+              - generic [ref=e488]: YouTube
+              - generic [ref=e490]: 예약됨
+            - generic [ref=e492]:
+              - generic [ref=e493]:
+                - generic [ref=e495]:
+                  - img [ref=e497]
+                  - generic [ref=e499]: 영상
+                  - generic [ref=e500]: 1:48
+                - generic [ref=e501]: 신뢰지수 2.0 브랜드 필름
+              - generic [ref=e502]:
+                - generic [ref=e504]:
+                  - img [ref=e505]
+                  - generic [ref=e509]: 썸네일
+                - generic [ref=e510]: 신뢰지수 키 비주얼 썸네일
+              - generic [ref=e511]:
+                - generic [ref=e513]:
+                  - img [ref=e514]
+                  - generic [ref=e516]: 캡션
+                - generic [ref=e517]: 캠페인 메인 카피 캡션
+            - generic [ref=e518]:
+              - generic [ref=e519]: 다음 모듈 · Calendar
+              - generic [ref=e520]: 체크리스트 충족 시 scheduled 슬롯 자동 생성
+              - button "캘린더 모듈로 연결" [ref=e521] [cursor=pointer]:
+                - img [ref=e522]
+                - text: 캘린더 모듈로 연결
+      - generic [ref=e524]:
+        - generic [ref=e525]:
+          - generic [ref=e526]: C · Ops 커맨드 대시보드 — 상단 탭 + 퍼널/KPI 허브 (데이터 우선)
+          - generic [ref=e527]: 1360×860
+          - generic [ref=e528]:
+            - generic "이름 변경" [ref=e529] [cursor=pointer]:
+              - img [ref=e530]
+            - generic "전체화면" [ref=e532] [cursor=pointer]:
+              - img [ref=e533]
+            - generic "PNG 저장" [ref=e538] [cursor=pointer]:
+              - img [ref=e539]
+        - generic [ref=e543]:
+          - generic [ref=e544]:
+            - generic [ref=e545]:
+              - generic [ref=e546]: T
+              - generic [ref=e547]: TRUSTA
+            - generic [ref=e548]:
+              - generic [ref=e549]:
+                - img [ref=e550]
+                - text: Inbox
+              - generic [ref=e553]:
+                - img [ref=e554]
+                - text: Library
+              - generic [ref=e559]:
+                - img [ref=e560]
+                - text: Groups
+              - generic [ref=e564]:
+                - img [ref=e565]
+                - text: Calendar
+              - generic [ref=e568]:
+                - img [ref=e569]
+                - text: Review
+              - generic [ref=e572]:
+                - img [ref=e573]
+                - text: Ops
+            - generic [ref=e575]:
+              - generic [ref=e576]:
+                - img [ref=e577]
+                - text: 최근 7일
+              - button "리포트" [ref=e580] [cursor=pointer]:
+                - img [ref=e581]
+                - text: 리포트
+          - generic [ref=e584]:
+            - generic [ref=e585]: 파이프라인 현황
+            - generic [ref=e586]:
+              - generic [ref=e587]:
+                - generic [ref=e588]: "4"
+                - generic [ref=e590]: 초안
+              - generic [ref=e592]:
+                - generic [ref=e593]: "24"
+                - generic [ref=e595]: 예약됨
+              - generic [ref=e597]:
+                - generic [ref=e598]: "3"
+                - generic [ref=e600]: 검수중
+              - generic [ref=e602]:
+                - generic [ref=e603]: "18"
+                - generic [ref=e605]: 승인됨
+              - generic [ref=e607]:
+                - generic [ref=e608]: "11"
+                - generic [ref=e610]: 발행됨
+            - generic [ref=e612]:
+              - generic [ref=e613]:
+                - generic [ref=e614]: 예약 건수
+                - generic [ref=e615]: "24"
+                - generic [ref=e617]:
+                  - img [ref=e618]
+                  - text: "+12"
+              - generic [ref=e629]:
+                - generic [ref=e630]: 검수 대기
+                - generic [ref=e631]: "3"
+                - generic [ref=e633]:
+                  - img [ref=e634]
+                  - text: "-2"
+              - generic [ref=e645]:
+                - generic [ref=e646]: 승인 완료
+                - generic [ref=e647]: "18"
+                - generic [ref=e649]:
+                  - img [ref=e650]
+                  - text: "+9"
+              - generic [ref=e661]:
+                - generic [ref=e662]: 발행 완료
+                - generic [ref=e663]: "11"
+                - generic [ref=e665]:
+                  - img [ref=e666]
+                  - text: "+4"
+              - generic [ref=e677]:
+                - generic [ref=e678]: 실패
+                - generic [ref=e679]: "1"
+                - generic [ref=e681]:
+                  - img [ref=e682]
+                  - text: "-1"
+            - generic [ref=e693]:
+              - generic [ref=e694]:
+                - generic [ref=e695]:
+                  - heading "운영 상태판" [level=3] [ref=e696]
+                  - generic [ref=e697]: 채널별 사이클
+                - table [ref=e699]:
+                  - rowgroup [ref=e700]:
+                    - row "채널 사이클 상태 다음 실행" [ref=e701]:
+                      - columnheader "채널" [ref=e702]
+                      - columnheader "사이클" [ref=e703]
+                      - columnheader "상태" [ref=e704]
+                      - columnheader "다음 실행" [ref=e705]
+                  - rowgroup [ref=e706]:
+                    - row "YouTube 발행 사이클 A 예약됨 06/24 18:00" [ref=e707]:
+                      - cell "YouTube" [ref=e708]:
+                        - generic [ref=e709]: YouTube
+                      - cell "발행 사이클 A" [ref=e711]
+                      - cell "예약됨" [ref=e712]:
+                        - generic [ref=e713]: 예약됨
+                      - cell "06/24 18:00" [ref=e715]
+                    - row "Instagram 발행 사이클 B 검수중 06/24 15:00" [ref=e716]:
+                      - cell "Instagram" [ref=e717]:
+                        - generic [ref=e718]: Instagram
+                      - cell "발행 사이클 B" [ref=e720]
+                      - cell "검수중" [ref=e721]:
+                        - generic [ref=e722]: 검수중
+                      - cell "06/24 15:00" [ref=e724]
+                    - row "X 발행 사이클 C 검수중 06/27 21:00" [ref=e725]:
+                      - cell "X" [ref=e726]:
+                        - generic [ref=e727]: X
+                      - cell "발행 사이클 C" [ref=e729]
+                      - cell "검수중" [ref=e730]:
+                        - generic [ref=e731]: 검수중
+                      - cell "06/27 21:00" [ref=e733]
+                    - row "Blog 발행 사이클 D 초안 —" [ref=e734]:
+                      - cell "Blog" [ref=e735]:
+                        - generic [ref=e736]: Blog
+                      - cell "발행 사이클 D" [ref=e738]
+                      - cell "초안" [ref=e739]:
+                        - generic [ref=e740]: 초안
+                      - cell "—" [ref=e742]
+                    - row "Threads 발행 사이클 E 실패 재시도 대기" [ref=e743]:
+                      - cell "Threads" [ref=e744]:
+                        - generic [ref=e745]: Threads
+                      - cell "발행 사이클 E" [ref=e747]
+                      - cell "실패" [ref=e748]:
+                        - generic [ref=e749]: 실패
+                      - cell "재시도 대기" [ref=e751]
+              - generic [ref=e752]:
+                - heading "publishing_enabled" [level=3] [ref=e754]
+                - generic [ref=e755]:
+                  - generic [ref=e759]:
+                    - generic [ref=e760]: OFF · 발행 차단
+                    - generic [ref=e761]: 조직 단위 토글
+                  - generic [ref=e763]:
+                    - img [ref=e765]
+                    - generic [ref=e769]: 🔴 OFF면 자동 발행이 일어나지 않습니다
+      - generic [ref=e770]:
+        - generic [ref=e771]:
+          - generic [ref=e772]: D · 다크 시나리오 레일 — 아이콘 레일 + 상시 미니맵 (프로/포커스형)
+          - generic [ref=e773]: 1360×860
+          - generic [ref=e774]:
+            - generic "이름 변경" [ref=e775] [cursor=pointer]:
+              - img [ref=e776]
+            - generic "전체화면" [ref=e778] [cursor=pointer]:
+              - img [ref=e779]
+            - generic "PNG 저장" [ref=e784] [cursor=pointer]:
+              - img [ref=e785]
+        - generic [ref=e789]:
+          - generic [ref=e790]:
+            - generic [ref=e791]: T
+            - img [ref=e793]
+            - img [ref=e797]
+            - img [ref=e803]
+            - img [ref=e808]
+            - img [ref=e812]
+            - img [ref=e817]
+          - generic [ref=e819]:
+            - generic [ref=e820]:
+              - generic [ref=e821]: Review · Approval
+              - generic [ref=e822]: in_review · 3
+              - generic [ref=e824]:
+                - generic [ref=e825]:
+                  - img [ref=e826]
+                  - text: 할당
+                - button "승인" [ref=e830] [cursor=pointer]:
+                  - img [ref=e831]
+                  - text: 승인
+            - generic [ref=e833]:
+              - generic [ref=e834]:
+                - generic [ref=e835]:
+                  - generic [ref=e836]: 보안 점검 카드뉴스 시리즈
+                  - generic [ref=e837]: Instagram
+                  - generic [ref=e839]:
+                    - img [ref=e840]
+                    - text: 06/24 15:00 예약
+                - generic [ref=e843]:
+                  - generic [ref=e844]:
+                    - generic [ref=e846]:
+                      - img [ref=e847]
+                      - generic [ref=e849]: 캡션
+                    - generic [ref=e850]: 캠페인 메인 카피 캡션
+                  - generic [ref=e851]:
+                    - generic [ref=e853]:
+                      - img [ref=e854]
+                      - generic [ref=e859]: 카드뉴스
+                    - generic [ref=e860]: 보안 점검 5단계 카드뉴스
+                  - generic [ref=e861]:
+                    - generic [ref=e863]:
+                      - img [ref=e864]
+                      - generic [ref=e869]: 카드뉴스
+                    - generic [ref=e870]: 2FA 안내 카드뉴스
+                  - generic [ref=e871]:
+                    - generic [ref=e873]:
+                      - img [ref=e874]
+                      - generic [ref=e876]: 캡션
+                    - generic [ref=e877]: 규제 업데이트 요약 스레드
+              - generic [ref=e878]:
+                - generic [ref=e879]:
+                  - generic [ref=e880]: 캡션 · 본문
+                  - paragraph [ref=e881]: TRUSTA가 제안하는 안전한 자산 관리 습관 5가지. 매주 점검하는 보안 루틴으로 사고를 예방하세요. 카드뉴스를 넘기며 단계별로 확인할 수 있습니다.
+                  - generic [ref=e882]:
+                    - generic [ref=e883]: 컴플라이언스 ✓
+                    - generic [ref=e884]: 저작권 ✓
+                    - generic [ref=e885]: 채널 규격 ✓
+                    - generic [ref=e886]: 대표 이미지 ✓
+                - generic [ref=e887]:
+                  - generic [ref=e888]: 검수 결정
+                  - button "승인 (approved)" [ref=e889] [cursor=pointer]:
+                    - img [ref=e890]
+                    - text: 승인 (approved)
+                  - button "반려" [ref=e892] [cursor=pointer]:
+                    - img [ref=e893]
+                    - text: 반려
+          - generic [ref=e895]:
+            - generic [ref=e896]:
+              - img [ref=e897]
+              - generic [ref=e901]: 시나리오 미니맵
+            - generic [ref=e902]:
+              - img [ref=e904]
+              - generic [ref=e907]:
+                - generic [ref=e908]: 1. Import
+                - generic [ref=e909]: 7 received
+            - generic [ref=e911]:
+              - img [ref=e913]
+              - generic [ref=e918]:
+                - generic [ref=e919]: 2. Library
+                - generic [ref=e920]: 16 stored
+            - generic [ref=e922]:
+              - img [ref=e924]
+              - generic [ref=e928]:
+                - generic [ref=e929]: 3. Group
+                - generic [ref=e930]: 6 assembled
+            - generic [ref=e932]:
+              - img [ref=e934]
+              - generic [ref=e937]:
+                - generic [ref=e938]: 4. Calendar
+                - generic [ref=e939]: scheduled
+            - generic [ref=e941]:
+              - img [ref=e943]
+              - generic [ref=e946]:
+                - generic [ref=e947]: 5. Review
+                - generic [ref=e948]: 검수 중 · 3
+            - generic [ref=e951]:
+              - img [ref=e953]
+              - generic [ref=e956]:
+                - generic [ref=e957]: 6. Publish
+                - generic [ref=e958]: locked
+            - generic [ref=e960]:
+              - img [ref=e961]
+              - text: publishing_enabled OFF
